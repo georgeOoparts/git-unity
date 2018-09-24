@@ -14,4 +14,5 @@ public class k5_staticMethod : MonoBehaviour {
 	void Update () {
 		
 	}
+
 }
