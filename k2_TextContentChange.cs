@@ -15,8 +15,8 @@ public class k2_TextContentChange : MonoBehaviour {
         text.text = "k2_1_TextContentChange";
     }
     void Update() {
-        //k2_aab:スクリーン座標のテキスト幅   text.preferredWidth
-        //k2_aab:スクリーン座標のテキスト高さ text.preferredHeight
+        //k2_aab1:スクリーン座標のテキスト幅   text.preferredWidth
+        //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
         /*
         Debug.Log("text幅::"+text.preferredWidth
             +"高さ::" +text.preferredHeight);
