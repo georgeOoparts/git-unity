@@ -4,18 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 //textオブジェにアタッチ。テキストの長さに合わせてテキスト幅を広げる
 public class k4_atRectTransform: MonoBehaviour {
-    //k2_1_a:どこかに書かれている。Textというクラスを扱うための変数を作成
-    Text text;
+    //k4_a:どこかに書いてあるRectTransformの変数を作る
+    RectTransform rt;
     // Use this for initialization
     void Start () {
-        //k2_1_b:Textをこのオブジェクトで使うためのおまじない
-        text = this.gameObject.GetComponent<Text>();
+        //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
+        rt = this.gameObject.GetComponent<RectTransform>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //textオブジェクトのサイズを文字に会わせる 
-        text.rectTransform.sizeDelta
-            = new Vector2(text.preferredWidth, text.preferredHeight);
+        //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
+        //rt.sizeDelta.x
+        //k4_aaa2:uiオブジェクトのスクリーン座標高さを得る
+        //rt.sizeDelta.y
+
+        //k4_aab:uiの幅、高さをスクリーン値で変形させる
+        //rt.sizeDelta = new Vector2(100,100);
+
+        //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
+        //rt.anchoredPosition = new Vector2(190, -145);
+        //k4_aac2:uiをワールド値で移動
+        //rt.position = new Vector2(0,0);
+
     }
 }
