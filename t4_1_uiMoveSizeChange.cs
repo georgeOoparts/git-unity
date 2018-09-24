@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 //textオブジェにアタッチ。
 //uiをrectTransformで移動。サイズ変更。
-public class k4_1_uiMoveSizeChange: MonoBehaviour {
+public class t4_1_uiMoveSizeChange : MonoBehaviour {
     //k2_1_a:どこかに書かれている。Textというクラスを扱うための変数を作成
     Text text;
     RectTransform rtText;
