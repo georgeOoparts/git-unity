@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 
 //k1　デバックログの使い方
 public class k1_1_debugLog : MonoBehaviour {
