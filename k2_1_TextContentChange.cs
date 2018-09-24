@@ -13,7 +13,6 @@ public class k2_1_TextContentChange : MonoBehaviour {
         text = this.gameObject.GetComponent<Text>();
         //k2_1_c:text.text = "・・・ "でTEXTのないよう変更。
         text.text = "k2_1_TextContentChange";
-
     }
     void Update() {
         //k2_1_d:スクリーン座標のテキスト幅   text.preferredWidth
