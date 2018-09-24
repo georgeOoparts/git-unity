@@ -26,6 +26,5 @@ public class k4_atRectTransform: MonoBehaviour {
         //rt.anchoredPosition = new Vector2(190, -145);
         //k4_aac2:uiをワールド値で移動
         //rt.position = new Vector2(0,0);
-
     }
 }
