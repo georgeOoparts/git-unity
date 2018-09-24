@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//k1　デバックログの使い方
 public class k1_debugLog : MonoBehaviour {
 
 	// Use this for initialization
