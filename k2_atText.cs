@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 
 //text ui にアタッチする。マウスのスクリーンポイントをUIのtextに表示
-public class k2_TextContentChange : MonoBehaviour {
+public class k2_atText : MonoBehaviour {
     //k2_a:どこかに書かれている。Textというクラスを扱うための変数を作成
     Text text;
 
