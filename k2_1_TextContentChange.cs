@@ -12,6 +12,10 @@ public class k2_1_TextContentChange : MonoBehaviour {
         //k2_1_b:Textをこのオブジェクトで使うためのおまじない
         text = this.gameObject.GetComponent<Text>();
         //k2_1_c:text.text = "・・・ "でTEXTのないよう変更。
+    }
+    void Update() {
         text.text = "k2_1_TextContentChange";
+
+        Debug.Log("text幅::"+text.preferredWidth+"高さ::"+text.preferredHeight);
     }
 }
