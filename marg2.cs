@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 //aaaa
+//bbbb
 public class marg2 : MonoBehaviour {
 
 	// Use this for initialization
