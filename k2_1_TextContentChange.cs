@@ -12,6 +12,6 @@ public class k2_1_TextContentChange : MonoBehaviour {
         //k2_1_b:Textをこのオブジェクトで使うためのおまじない
         text = this.gameObject.GetComponent<Text>();
         //k2_1_c:text.text = "・・・ "でTEXTのないよう変更。
-        text.text = "screen:: ";
+        text.text = "k2_1_TextContentChange";
     }
 }
