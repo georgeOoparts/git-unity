@@ -8,6 +8,6 @@ public class k3_screenMousePoint : MonoBehaviour {
     // Update is called once per frame
 	void Update () {
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
-        Debug.Log(Input.mousePosition.ToString());
+        //Debug.Log(Input.mousePosition.ToString());
     }
 }
