@@ -8,7 +8,7 @@ public class k1_debugLog : MonoBehaviour {
     int hensu = 9999;
 	// Use this for initialization
 	void Start () {
-        Debug.Log("デバックログはこうやるぜ"+hensu);
+        Debug.Log("デバックログはこうやるぜee"+hensu);
 	}
 	
 	// Update is called once per frame
