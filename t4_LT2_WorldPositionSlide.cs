@@ -19,6 +19,9 @@ public class t4_LT2_WorldPositionSlide : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        //一番左上のltTextの高さだけ下にポジショニング
+        
+        //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight 
         //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
         rt.anchoredPosition = new Vector2(0,-ltTx.preferredHeight);
     }
