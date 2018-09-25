@@ -9,7 +9,7 @@ public class k6_stopWatch : MonoBehaviour {
         = new System.Diagnostics.Stopwatch();
     // 何秒たったかを変数elapseに入れる
     private float elapse;
-    public float interval = 0.35f;
+    //public float interval = 0.35f;
     // Use this for initialization
     void Start () {
         //k6_aa:ストップウォッチスタート
