@@ -43,6 +43,8 @@ public class t7_contentNarabe : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //k9_a:左クリック入力　Input.GetMouseButtonDown(0)
+        if (Input.GetMouseButtonDown(0)) count++;
 
         text1.text = content(1, count);
         text2.text = content(2, count);
@@ -51,15 +53,14 @@ public class t7_contentNarabe : MonoBehaviour {
         text5.text = content(5, count);
         text6.text = content(6, count);
         text7.text = content(7, count);
-        //k9_a:左クリック入力　Input.GetMouseButtonDown(0)
-        if (Input.GetMouseButtonDown(0)) count++;
+        
     }
     string content(int i, int j) {
         string content = "";
         if (i == 1) {
             if (j == 1) content = "三角形";
             else if (j == 2) content = "点";
-            else content = "";
+            else content = "";//Debug.Log("t7");
         } else if (i == 2) {
             if (j == 1) content = "ABC";
             else if (j == 2) content = "A";

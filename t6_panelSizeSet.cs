@@ -38,6 +38,6 @@ public class t6_panelSizeSet : MonoBehaviour {
             //k4_aab:uiの幅、高さをスクリーン値で変形させる
             //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
             Rt.sizeDelta= new Vector2(0,kodomoText.preferredHeight + yohaku);
-        }Debug.Log("t6up"); 
+        }//Debug.Log("t6up"); 
     }
 }
