@@ -23,6 +23,7 @@ public class t7_contentNarabe : MonoBehaviour {
     int count = 1;
     // Use this for initialization
     void Start() {
+        //Debug.Log("t7_contentNarabe");
         t1 = GameObject.Find("Text1");
         t2 = GameObject.Find("Text2");
         t3 = GameObject.Find("Text3");
