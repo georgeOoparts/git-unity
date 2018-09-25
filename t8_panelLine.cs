@@ -12,7 +12,7 @@ public class t8_panelLine : MonoBehaviour {
     GameObject p5;
     GameObject p6;
     GameObject p7;
-
+    //k4_a:どこかに書いてあるRectTransformの変数を作る
     RectTransform rt1;
     RectTransform rt2;
     RectTransform rt3;
@@ -29,7 +29,7 @@ public class t8_panelLine : MonoBehaviour {
         p5 = GameObject.Find("wordPanel5");
         p6 = GameObject.Find("wordPanel6");
         p7 = GameObject.Find("wordPanel7");
-
+        //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
         rt1 = p1.GetComponent<RectTransform>();
         rt2 = p2.GetComponent<RectTransform>();
         rt3 = p3.GetComponent<RectTransform>();
@@ -42,6 +42,8 @@ public class t8_panelLine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log("t8_panelLine");
+        //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
+        //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
         rt1.anchoredPosition = new Vector2(0, 0);
         plusScreenWidth =rt1.sizeDelta.x;
         rt2.anchoredPosition = new Vector2(plusScreenWidth, 0);
