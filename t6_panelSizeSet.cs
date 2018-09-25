@@ -23,14 +23,20 @@ public class t6_panelSizeSet : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
-        //アンカーがストレッチ以外ならスクリーン座標の値でパネルの幅、高さを
-        //指定できる。アンカー左上以外　あり得ないぜええ
-        //k4_aab:uiの幅、高さをスクリーン値で変形させる
-        //k2_aab1:スクリーン座標のテキスト幅   text.preferredWidth
-        //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
-        Rt.sizeDelta
-            = new Vector2(kodomoText.preferredWidth + yohaku
-            , kodomoText.preferredHeight + yohaku);
-        //Debug.Log("textPanelSizeSize_org:::"+kodomoText.preferredWidth);
+        //子ＴＥＸＴの幅が０でなければ（子テキストが空でなければ）
+        if (kodomoText.preferredWidth != 0) {
+            //アンカーがストレッチ以外ならスクリーン座標の値でパネルの幅、高さを
+            //指定できる。アンカー左上以外　あり得ないぜええ
+            //k4_aab:uiの幅、高さをスクリーン値で変形させる
+            //k2_aab1:スクリーン座標のテキスト幅   text.preferredWidth
+            //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
+            Rt.sizeDelta
+                = new Vector2(kodomoText.preferredWidth + yohaku
+                , kodomoText.preferredHeight + yohaku);
+        } else {//子ＴＥＸＴが空ならば、このＰＡＮＥＬの幅０でＯＫ
+            //k4_aab:uiの幅、高さをスクリーン値で変形させる
+            //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
+            Rt.sizeDelta= new Vector2(0,kodomoText.preferredHeight + yohaku);
+        } 
     }
 }
