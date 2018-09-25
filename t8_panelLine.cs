@@ -46,29 +46,28 @@ public class t8_panelLine : MonoBehaviour {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0, 0);
-            plusScreenWidth = rt1.sizeDelta.x;
+            plusScreenWidth += rt1.sizeDelta.x;
             Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition = new Vector2(plusScreenWidth, 0);
-            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x;
+            plusScreenWidth += rt2.sizeDelta.x;
 
             rt3.anchoredPosition = new Vector2(plusScreenWidth, 0);
-            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x;
+            plusScreenWidth += rt3.sizeDelta.x;
 
             rt4.anchoredPosition = new Vector2(plusScreenWidth, 0);
-            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-                + rt4.sizeDelta.x;
+            plusScreenWidth += rt4.sizeDelta.x;
 
             rt5.anchoredPosition = new Vector2(plusScreenWidth, 0);
-            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-                + rt4.sizeDelta.x + rt5.sizeDelta.x;
+            plusScreenWidth += rt5.sizeDelta.x;
 
             rt6.anchoredPosition = new Vector2(plusScreenWidth, 0);
-            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-                + rt4.sizeDelta.x + rt5.sizeDelta.x + rt6.sizeDelta.x;
+            plusScreenWidth += rt6.sizeDelta.x;
 
             rt7.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = 0;
             //Debug.Log("t8st");
-        }turn++;//Debug.Log(turn);
+        }
+        turn++;//Debug.Log(turn);
     }
 }
