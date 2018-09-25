@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class t8_panelLine : MonoBehaviour {
     public float plusScreenWidth=0;
 
+    int turn=0;
+
     GameObject p1;
     GameObject p2;
     GameObject p3;
@@ -38,33 +40,34 @@ public class t8_panelLine : MonoBehaviour {
         rt6 = p6.GetComponent<RectTransform>();
         rt7 = p7.GetComponent<RectTransform>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        //Debug.Log("t8_panelLine");
-        //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
-        //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
-        rt1.anchoredPosition = new Vector2(0, 0);
-        plusScreenWidth =rt1.sizeDelta.x;
 
-        rt2.anchoredPosition = new Vector2(plusScreenWidth, 0);
-        plusScreenWidth = rt1.sizeDelta.x+ rt2.sizeDelta.x;
+	void LateUpdate () {
+        if (turn==0) {
+            //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
+            //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
+            rt1.anchoredPosition = new Vector2(0, 0);
+            plusScreenWidth = rt1.sizeDelta.x;
 
-        rt3.anchoredPosition = new Vector2(plusScreenWidth, 0);
-        plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x+ rt3.sizeDelta.x;
+            rt2.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x;
 
-        rt4.anchoredPosition = new Vector2(plusScreenWidth, 0);
-        plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-            + rt4.sizeDelta.x;
+            rt3.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x;
 
-        rt5.anchoredPosition = new Vector2(plusScreenWidth, 0);
-        plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-            + rt4.sizeDelta.x+ rt5.sizeDelta.x;
+            rt4.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
+                + rt4.sizeDelta.x;
 
-        rt6.anchoredPosition = new Vector2(plusScreenWidth, 0);
-        plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
-            + rt4.sizeDelta.x + rt5.sizeDelta.x+ rt6.sizeDelta.x;
+            rt5.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
+                + rt4.sizeDelta.x + rt5.sizeDelta.x;
 
-        rt7.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            rt6.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            plusScreenWidth = rt1.sizeDelta.x + rt2.sizeDelta.x + rt3.sizeDelta.x
+                + rt4.sizeDelta.x + rt5.sizeDelta.x + rt6.sizeDelta.x;
+
+            rt7.anchoredPosition = new Vector2(plusScreenWidth, 0);
+            Debug.Log("t8st");
+        }turn++;
     }
 }

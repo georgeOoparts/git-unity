@@ -20,6 +20,7 @@ public class t6_panelSizeSet : MonoBehaviour {
         kodomoText = kodomoObj.GetComponent<Text>();
         //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
         Rt = this.gameObject.GetComponent<RectTransform>();
+        //Debug.Log("t6MMMM");
     }
     // Update is called once per frame
     void Update() {
@@ -37,6 +38,6 @@ public class t6_panelSizeSet : MonoBehaviour {
             //k4_aab:uiの幅、高さをスクリーン値で変形させる
             //k2_aab2:スクリーン座標のテキスト高さ text.preferredHeight
             Rt.sizeDelta= new Vector2(0,kodomoText.preferredHeight + yohaku);
-        } 
+        }Debug.Log("t6up"); 
     }
 }
