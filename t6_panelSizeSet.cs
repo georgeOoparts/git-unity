@@ -23,6 +23,6 @@ public class t6_panelSizeSet : MonoBehaviour {
         Rt.sizeDelta
             = new Vector2(kodomoText.preferredWidth + yohaku
             , kodomoText.preferredHeight + yohaku);
-        //Debug.Log("textPanelSizeSize_org:::"+kodomoText.preferredWidth);
+        Debug.Log("textPanelSizeSize_org:::"+kodomoText.preferredWidth);
     }
 }
