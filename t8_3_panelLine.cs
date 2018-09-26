@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
 //t8_panelLine_3:
 public class t8_3_panelLine : MonoBehaviour {
-    float plusScreenWidth=0;
+    float plusScreenWidth = 0;
 
     bool firstTime = true;
 
@@ -26,7 +26,7 @@ public class t8_3_panelLine : MonoBehaviour {
     RectTransform rt6;
     RectTransform rt7;
     // Use this for initialization
-    void Start () {
+    void Start() {
         p1 = GameObject.Find("wordPanel1");
         p2 = GameObject.Find("wordPanel2");
         p3 = GameObject.Find("wordPanel3");
@@ -44,8 +44,8 @@ public class t8_3_panelLine : MonoBehaviour {
         rt7 = p7.GetComponent<RectTransform>();
     }
 
-	void LateUpdate () {
-        if (firstTime==true ||Input.GetMouseButtonDown(0)) {
+    void LateUpdate() {
+        if (firstTime == true || Input.GetMouseButtonDown(0)) {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0, 0);
