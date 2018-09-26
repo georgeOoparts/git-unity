@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class t8_panelLine : MonoBehaviour {
     float plusScreenWidth=0;
 
-    int turn=0;
+    bool firstTime = true;
 
     GameObject p1;
     GameObject p2;
@@ -42,12 +42,12 @@ public class t8_panelLine : MonoBehaviour {
     }
 
 	void LateUpdate () {
-        if (turn==0 ||Input.GetMouseButtonDown(0)) {
+        if (firstTime==true ||Input.GetMouseButtonDown(0)) {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0, 0);
             plusScreenWidth += rt1.sizeDelta.x;
-            Debug.Log(rt1.sizeDelta.x);
+            //Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition = new Vector2(plusScreenWidth, 0);
             plusScreenWidth += rt2.sizeDelta.x;
@@ -66,8 +66,7 @@ public class t8_panelLine : MonoBehaviour {
 
             rt7.anchoredPosition = new Vector2(plusScreenWidth, 0);
             plusScreenWidth = 0;
-            //Debug.Log("t8st");
         }
-        turn++;//Debug.Log(turn);
+        firstTime = false;
     }
 }
