@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//こっちも追加したい
+//t8_panelLine:TEXTpanel内のwordPanelをただ一直線に並べる
 public class t8_panelLine : MonoBehaviour {
     public float plusScreenWidth=0;
 
