@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class t8_panelLine : MonoBehaviour {
+//t8_panelLine:TEXTpanel内のwordPanelをただ一直線に並べる
+//t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
+public class t8_a_panelLine : MonoBehaviour {
     float plusScreenWidth=0;
 
     bool firstTime = true;
