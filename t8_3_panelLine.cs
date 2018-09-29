@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 //t8_panelLine:TEXTpanel内のwordPanelをただ一直線に並べる
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
-//t8_panelLine_3:改行を追加　未完
+//t8_panelLine_3:TEXTPANEL1が短すぎるとバグが起こる。後は解説だけ。
 public class t8_3_panelLine : MonoBehaviour {
     float textLineWidth = 0;
     float hanteiKaigyouWidth = 0;
@@ -61,51 +61,59 @@ public class t8_3_panelLine : MonoBehaviour {
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0,0);
             textLineWidth += rt1.sizeDelta.x;
-            hanteiKaigyouWidth += rt1.sizeDelta.x+ rt2.sizeDelta.x;
+            hanteiKaigyouWidth += rt1.sizeDelta.x+rt2.sizeDelta.x;
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = 0;
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
             }
             //Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt2.sizeDelta.x;
-            hanteiKaigyouWidth += rt2.sizeDelta.x+rt3.sizeDelta.x;
+            hanteiKaigyouWidth += rt3.sizeDelta.x;
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = 0;
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt3.sizeDelta.x;
             }
 
             rt3.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt3.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt4.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt4.sizeDelta.x;
             }
 
             rt4.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt4.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt5.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt5.sizeDelta.x;
             }
 
             rt5.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt5.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt6.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
             }
 
             rt6.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt6.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt7.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt7.sizeDelta.x;
             }
 
             rt7.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+
+            Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
+
             textLineWidth = 0;
+            hanteiKaigyouWidth = 0;
             kaigyou = 0;
         }
         firstTime = false;
