@@ -6,12 +6,12 @@ using UnityEngine.UI;
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
 //t8_panelLine_3:TEXTPANEL1が短すぎるとバグが起こる。後は解説だけ。
 public class t8_3_panelLine : MonoBehaviour {
-    float textLineWidth = 0;
-    float hanteiKaigyouWidth = 0;
+    float textLineWidth = 0;//前のパネルの幅、を入れる変数。
+    float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
 
-    int kaigyou = 0;
+    int kaigyou = 0;//縦への改行を入れる変数。
 
-    bool firstTime = true;
+    bool firstTime = true;//アップデートメソッドの中で初めてかどうかチェックする変数。
 
     GameObject p1;
     GameObject p2;
@@ -59,15 +59,15 @@ public class t8_3_panelLine : MonoBehaviour {
         if (firstTime == true || Input.GetMouseButtonDown(0)) {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
-            rt1.anchoredPosition = new Vector2(0,0);
-            textLineWidth += rt1.sizeDelta.x;
-            hanteiKaigyouWidth += rt1.sizeDelta.x+rt2.sizeDelta.x;
+            rt1.anchoredPosition = new Vector2(0,0);//ＰＡＮＥＬ１をＴＥＸＴＰＮＥＬの左上へ置く。
+            textLineWidth += rt1.sizeDelta.x;//ＰＡＮＥＬ２の開始位置のためにＰＮＥＬ１の幅を足す。
+            hanteiKaigyouWidth += rt1.sizeDelta.x+rt2.sizeDelta.x;//パネル２の行をチェックするために　代入
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
             }
             //Debug.Log(rt1.sizeDelta.x);
 
-            rt2.anchoredPosition 
+            rt2.anchoredPosition//パネル２の開始位置を決める。ｙ軸は下方向マイナスである事に注意 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt2.sizeDelta.x;
             hanteiKaigyouWidth += rt3.sizeDelta.x;
@@ -110,9 +110,10 @@ public class t8_3_panelLine : MonoBehaviour {
             rt7.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
 
+            //エラーチェックのための出力
             Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
 
-            textLineWidth = 0;
+            textLineWidth = 0;//最後にこれらの値をリセットする。
             hanteiKaigyouWidth = 0;
             kaigyou = 0;
         }
