@@ -7,7 +7,8 @@ using UnityEngine.UI;
 //t8_panelLine_3:改行を追加　未完
 public class t8_3_panelLine : MonoBehaviour {
     float textLineWidth = 0;
-    
+    float hanteiKaigyouWidth = 0;
+
     int kaigyou = 0;
 
     bool firstTime = true;
@@ -60,16 +61,18 @@ public class t8_3_panelLine : MonoBehaviour {
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0,0);
             textLineWidth += rt1.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt1.sizeDelta.x+ rt2.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = 0;
             }
             //Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
             textLineWidth += rt2.sizeDelta.x;
-            if (textLineWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0;
+            hanteiKaigyouWidth += rt2.sizeDelta.x+rt3.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = 0;
             }
 
             rt3.anchoredPosition 
