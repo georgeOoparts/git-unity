@@ -19,6 +19,8 @@ public class t8_3_panelLine : MonoBehaviour {
     GameObject p5;
     GameObject p6;
     GameObject p7;
+
+    GameObject tPanel;
     //k4_a:どこかに書いてあるRectTransformの変数を作る
     RectTransform rt1;
     RectTransform rt2;
@@ -27,6 +29,8 @@ public class t8_3_panelLine : MonoBehaviour {
     RectTransform rt5;
     RectTransform rt6;
     RectTransform rt7;
+
+    RectTransform tpRt;
     // Use this for initialization
     void Start() {
         p1 = GameObject.Find("wordPanel1");
@@ -36,6 +40,8 @@ public class t8_3_panelLine : MonoBehaviour {
         p5 = GameObject.Find("wordPanel5");
         p6 = GameObject.Find("wordPanel6");
         p7 = GameObject.Find("wordPanel7");
+
+        tPanel = GameObject.Find("textPanel");
         //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
         rt1 = p1.GetComponent<RectTransform>();
         rt2 = p2.GetComponent<RectTransform>();
@@ -44,41 +50,55 @@ public class t8_3_panelLine : MonoBehaviour {
         rt5 = p5.GetComponent<RectTransform>();
         rt6 = p6.GetComponent<RectTransform>();
         rt7 = p7.GetComponent<RectTransform>();
+
+        tpRt =tPanel.GetComponent<RectTransform>();
     }
 
     void LateUpdate() {
         if (firstTime == true || Input.GetMouseButtonDown(0)) {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
-            rt1.anchoredPosition = new Vector2(0, -kaigyou* rt1.sizeDelta.y);
+            rt1.anchoredPosition = new Vector2(0,0);
             plusScreenWidth += rt1.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
             //Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
             plusScreenWidth += rt2.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
 
             rt3.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
             plusScreenWidth += rt3.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
 
             rt4.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
             plusScreenWidth += rt4.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
 
             rt5.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
             plusScreenWidth += rt5.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
 
             rt6.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
             plusScreenWidth += rt6.sizeDelta.x;
-            kaigyou++;
+            if (plusScreenWidth > tpRt.sizeDelta.x) {
+                kaigyou++; plusScreenWidth = 0;
+            }
 
             rt7.anchoredPosition 
                 = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
