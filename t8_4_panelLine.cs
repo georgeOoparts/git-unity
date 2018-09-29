@@ -5,7 +5,7 @@ using UnityEngine.UI;
 //t8_panelLine:TEXTpanel内のwordPanelをただ一直線に並べる
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
 //t8_panelLine_3:TEXTPANEL1が短すぎるとバグが起こる。
-public class t8_3_panelLine : MonoBehaviour {
+public class t8_4_panelLine : MonoBehaviour {
     float textLineWidth = 0;//前のパネルの幅、を入れる変数。
     float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
 
