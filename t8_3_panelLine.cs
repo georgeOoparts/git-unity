@@ -6,8 +6,8 @@ using UnityEngine.UI;
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
 //t8_panelLine_3:改行を追加　未完
 public class t8_3_panelLine : MonoBehaviour {
-    float plusScreenWidth = 0;
-
+    float textLineWidth = 0;
+    
     int kaigyou = 0;
 
     bool firstTime = true;
@@ -59,50 +59,50 @@ public class t8_3_panelLine : MonoBehaviour {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
             rt1.anchoredPosition = new Vector2(0,0);
-            plusScreenWidth += rt1.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+            textLineWidth += rt1.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
             //Debug.Log(rt1.sizeDelta.x);
 
             rt2.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth += rt2.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt2.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
 
             rt3.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth += rt3.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt3.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
 
             rt4.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth += rt4.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt4.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
 
             rt5.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth += rt5.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt5.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
 
             rt6.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth += rt6.sizeDelta.x;
-            if (plusScreenWidth > tpRt.sizeDelta.x) {
-                kaigyou++; plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt6.sizeDelta.x;
+            if (textLineWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0;
             }
 
             rt7.anchoredPosition 
-                = new Vector2(plusScreenWidth, -kaigyou * rt1.sizeDelta.y);
-            plusScreenWidth = 0;
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth = 0;
             kaigyou = 0;
         }
         firstTime = false;
