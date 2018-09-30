@@ -84,32 +84,7 @@ public class t8_4_2_panelLine : MonoBehaviour {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt4.sizeDelta.x;
             }
 
-            rt4.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt4.sizeDelta.x;
-            hanteiKaigyouWidth += rt5.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt5.sizeDelta.x;
-            }
-
-            rt5.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt5.sizeDelta.x;
-            hanteiKaigyouWidth += rt6.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
-            }
-
-            rt6.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt6.sizeDelta.x;
-            hanteiKaigyouWidth += rt7.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt7.sizeDelta.x;
-            }
-
-            rt7.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+           
 
             //エラーチェックのための出力
             Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
