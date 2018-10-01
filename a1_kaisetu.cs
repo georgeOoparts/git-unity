@@ -12,6 +12,8 @@ public class a1_kaisetu : MonoBehaviour {
     //g3無駄に進んだブランチを前の状態に戻す
     //g3 無駄に進んだブランチを○にする＞戻したい所のコミットを右クリ
     //g3＞現在のブランチをこのコミットまでリセット（hard）
+    //g4 masterを前の段階に戻す＞masterを○にする＞戻したい所のコミットを右クリ
+    //g4＞現在のブランチをこのコミットまでリセット（hard）
 
     //u1 呼び込まれるプログラムの順番　１上側＞edit>projectseting>scriptexecutionOrder  
     //u1>数字が低いほうから読み込まれる。
