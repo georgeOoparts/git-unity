@@ -9,6 +9,12 @@ public class t8_4_2_panelLine : MonoBehaviour {
     float textLineWidth = 0;//前のパネルの幅、を入れる変数。
     float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
 
+    float p2Start = 0;//panel2の開始位置
+    float p3Start = 0;//panel3の開始位置
+
+    int p2Kaigyou = 0;//panel2の行
+    int p3Kaigyou = 0;//panel3の行
+
     int kaigyou = 0;//縦への改行を入れる変数。
 
     bool firstTime = true;//アップデートメソッドの中で初めてかどうかチェックする変数。
