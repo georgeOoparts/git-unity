@@ -60,6 +60,7 @@ public class t8_4_2_panelLine : MonoBehaviour {
         if (firstTime == true || Input.GetMouseButtonDown(0)) {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
+
             rt1.anchoredPosition = new Vector2(0,0);//ＰＡＮＥＬ１をＴＥＸＴＰＮＥＬの左上へ置く。
             textLineWidth += rt1.sizeDelta.x;//ＰＡＮＥＬ２の開始位置のためにＰＮＥＬ１の幅を足す。
             hanteiKaigyouWidth += rt1.sizeDelta.x+rt2.sizeDelta.x;//パネル２の行をチェックするために　代入
@@ -77,38 +78,6 @@ public class t8_4_2_panelLine : MonoBehaviour {
             }
 
             rt3.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt3.sizeDelta.x;
-            hanteiKaigyouWidth += rt4.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt4.sizeDelta.x;
-            }
-
-            rt4.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt4.sizeDelta.x;
-            hanteiKaigyouWidth += rt5.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt5.sizeDelta.x;
-            }
-
-            rt5.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt5.sizeDelta.x;
-            hanteiKaigyouWidth += rt6.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
-            }
-
-            rt6.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
-            textLineWidth += rt6.sizeDelta.x;
-            hanteiKaigyouWidth += rt7.sizeDelta.x;
-            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt7.sizeDelta.x;
-            }
-
-            rt7.anchoredPosition 
                 = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
 
             //エラーチェックのための出力
