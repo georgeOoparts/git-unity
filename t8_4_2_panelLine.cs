@@ -95,11 +95,26 @@ public class t8_4_2_panelLine : MonoBehaviour {
             p3Start = textLineWidth;
             hanteiKaigyouWidth += rt3.sizeDelta.x;
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+<<<<<<< HEAD
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
                 p3Kaigyou = kaigyou; p3Start = textLineWidth;
             }
 
 
+=======
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt3.sizeDelta.x;
+            }
+
+            rt3.anchoredPosition 
+                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            textLineWidth += rt3.sizeDelta.x;
+            hanteiKaigyouWidth += rt4.sizeDelta.x;
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt4.sizeDelta.x;
+            }
+
+           
+>>>>>>> 7fe815b4ce53266ea957d77e36b96ce64ad95f28
 
             //エラーチェックのための出力
             //Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
