@@ -82,6 +82,9 @@ public class t8_4_3_panelLine : MonoBehaviour {
             p3Kaigyou = 0;//
             p4Kaigyou = 0;//p4Kaigyouをリセット　ターンが進むとこれがないと駄目
             p5Kaigyou = 0;//p5Kaigyouをリセット　ターンが進むとこれがないと駄目
+            p6Kaigyou = 0;//p5Kaigyouをリセット　ターンが進むとこれがないと駄目
+            p7Kaigyou = 0;//p5Kaigyouをリセット　ターンが進むとこれがないと駄目
+
 
             //ＰＡＮＥＬ２の開始位置のためにＰＮＥＬ１の幅を足す。
             textLineWidth += rt1.sizeDelta.x;
@@ -135,6 +138,20 @@ public class t8_4_3_panelLine : MonoBehaviour {
             }
             //前のパネルが改行し、このパネルが改行しない場合下がいる。
             p5Kaigyou = kaigyou;
+
+            //ＰＡＮＥＬ6の開始位置のためにＰＮＥＬ4の幅を足す。
+            textLineWidth += rt5.sizeDelta.x;
+            p6Start = textLineWidth;
+            //パネル5の行をチェックするために　代入
+            hanteiKaigyouWidth += rt6.sizeDelta.x;
+            //panel5までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
+                p6Kaigyou = kaigyou; p6Start = textLineWidth;
+            }
+            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            p6Kaigyou = kaigyou;
+
             //エラーチェックのための出力
             //Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
 
@@ -164,7 +181,8 @@ public class t8_4_3_panelLine : MonoBehaviour {
         //パネル5の開始位置を決める。ｙ軸は下方向マイナスである事に注意
         rt5.anchoredPosition = new Vector2(p5Start, -p5Kaigyou * rt1.sizeDelta.y);
 
-
+        //パネル6の開始位置を決める。ｙ軸は下方向マイナスである事に注意
+        rt6.anchoredPosition = new Vector2(p6Start, -p6Kaigyou * rt1.sizeDelta.y);
 
     }
 }
