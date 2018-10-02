@@ -5,9 +5,11 @@ using UnityEngine.UI;
 //t8_panelLine:TEXTpanel内のwordPanelをただ一直線に並べる
 //t8_panelLine_2:ターン性plusScreenWidth += rt1.sizeDelta.x;が差分
 //t8_panelLine_3:TEXTPANEL1が短すぎるとバグが起こる。
+//t8_panelLine_4_2:TEXTPANEL1が短すぎるとバグが起こる。p1,2,3でついに完成。後は解説文いれるだけ。
 public class t8_4_2_panelLine : MonoBehaviour {
     float textLineWidth = 0;//前のパネルの幅、を入れる変数。
     float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
+    float kakoTpanelWidth = 0;//ちょっと前のTEXTPANELの幅を入れる。ＴＥＸＴＰＡＮＥＬの幅が変化したかどうかを判定するとき使う
 
     float p2Start = 0;//panel2の開始位置
     float p3Start = 0;//panel3の開始位置
@@ -71,11 +73,12 @@ public class t8_4_2_panelLine : MonoBehaviour {
     //panelの幅調整、テキストの幅調整のプログラムより、後にこのプログラムを実行するため、
     //LateUpdateで実行。
     void LateUpdate() {
-        if (firstTime == true || Input.GetMouseButtonDown(0)) {
+        if (firstTime == true || Input.GetMouseButtonDown(0)|| kakoTpanelWidth != tpRt.sizeDelta.x) {//
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
 
             p2Kaigyou = 0;//ｐ２Kaigyouをリセット　ターンが進むとこれがないと駄目
+            p3Kaigyou = 0;//
 
             textLineWidth += rt1.sizeDelta.x;//ＰＡＮＥＬ２の開始位置のためにＰＮＥＬ１の幅を足す。
             p2Start = textLineWidth;
@@ -104,6 +107,8 @@ public class t8_4_2_panelLine : MonoBehaviour {
             textLineWidth = 0;//最後にこれらの値をリセットする。
             hanteiKaigyouWidth = 0;
             kaigyou = 0;
+
+            kakoTpanelWidth = tpRt.sizeDelta.x;//
         }
         firstTime = false;
         rt1.anchoredPosition = new Vector2(0, 0);//ＰＡＮＥＬ１をＴＥＸＴＰＮＥＬの左上へ置く。
@@ -113,6 +118,8 @@ public class t8_4_2_panelLine : MonoBehaviour {
 
         rt3.anchoredPosition
                 = new Vector2(p3Start, -p3Kaigyou * rt1.sizeDelta.y);
+
+       
 
     }
 }
