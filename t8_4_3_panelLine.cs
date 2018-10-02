@@ -129,9 +129,9 @@ public class t8_4_3_panelLine : MonoBehaviour {
             //ＰＡＮＥＬ5の開始位置のためにＰＮＥＬ4の幅を足す。
             textLineWidth += rt4.sizeDelta.x;
             p5Start = textLineWidth;
-            //パネル4の行をチェックするために　代入
+            //パネル5の行をチェックするために　代入
             hanteiKaigyouWidth += rt5.sizeDelta.x;
-            //panel4までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
+            //panel5までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt5.sizeDelta.x;
                 p5Kaigyou = kaigyou; p5Start = textLineWidth;
@@ -139,12 +139,12 @@ public class t8_4_3_panelLine : MonoBehaviour {
             //前のパネルが改行し、このパネルが改行しない場合下がいる。
             p5Kaigyou = kaigyou;
 
-            //ＰＡＮＥＬ6の開始位置のためにＰＮＥＬ4の幅を足す。
+            //ＰＡＮＥＬ6の開始位置のためにＰＮＥＬ5の幅を足す。
             textLineWidth += rt5.sizeDelta.x;
             p6Start = textLineWidth;
-            //パネル5の行をチェックするために　代入
+            //パネル6の行をチェックするために　代入
             hanteiKaigyouWidth += rt6.sizeDelta.x;
-            //panel5までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
+            //panel6までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
                 p6Kaigyou = kaigyou; p6Start = textLineWidth;
@@ -152,10 +152,21 @@ public class t8_4_3_panelLine : MonoBehaviour {
             //前のパネルが改行し、このパネルが改行しない場合下がいる。
             p6Kaigyou = kaigyou;
 
-            //エラーチェックのための出力
-            //Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
+            //ＰＡＮＥＬ7の開始位置のためにＰＮＥＬ6の幅を足す。
+            textLineWidth += rt6.sizeDelta.x;
+            p7Start = textLineWidth;
+            //パネル7の行をチェックするために　代入
+            hanteiKaigyouWidth += rt7.sizeDelta.x;
+            //panel7までの幅がＴＥＸＴＰＡＮＥＬの幅を超えたら
+            if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
+                kaigyou++;textLineWidth = 0; //hanteiKaigyouWidth = rt7.sizeDelta.x;
+                p7Kaigyou = kaigyou; p7Start = textLineWidth;
+            }
+            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            p7Kaigyou = kaigyou;
 
-            textLineWidth = 0;//最後にこれらの値をリセットする。
+            //最後にこれらの値をリセットする。
+            textLineWidth = 0;
             hanteiKaigyouWidth = 0;
             kaigyou = 0;
 
@@ -183,6 +194,9 @@ public class t8_4_3_panelLine : MonoBehaviour {
 
         //パネル6の開始位置を決める。ｙ軸は下方向マイナスである事に注意
         rt6.anchoredPosition = new Vector2(p6Start, -p6Kaigyou * rt1.sizeDelta.y);
+
+        //パネル6の開始位置を決める。ｙ軸は下方向マイナスである事に注意
+        rt7.anchoredPosition = new Vector2(p7Start, -p7Kaigyou * rt1.sizeDelta.y);
 
     }
 }
