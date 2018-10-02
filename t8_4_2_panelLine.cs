@@ -11,9 +11,17 @@ public class t8_4_2_panelLine : MonoBehaviour {
 
     float p2Start = 0;//panel2の開始位置
     float p3Start = 0;//panel3の開始位置
+    float p4Start = 0;//panel4の開始位置
+    float p5Start = 0;//panel5の開始位置
+    float p6Start = 0;//panel6の開始位置
+    float p7Start = 0;//panel7の開始位置
 
     int p2Kaigyou = 0;//panel2の行
     int p3Kaigyou = 0;//panel3の行
+    int p4Kaigyou = 0;//panel4の行
+    int p5Kaigyou = 0;//panel5の行
+    int p6Kaigyou = 0;//panel6の行
+    int p7Kaigyou = 0;//panel7の行
 
     int kaigyou = 0;//縦への改行を入れる変数。
 
