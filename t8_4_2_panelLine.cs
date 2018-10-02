@@ -67,16 +67,19 @@ public class t8_4_2_panelLine : MonoBehaviour {
             //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
             //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
 
-            rt1.anchoredPosition = new Vector2(0,0);//ＰＡＮＥＬ１をＴＥＸＴＰＮＥＬの左上へ置く。
+            p2Kaigyou = 0;//ｐ２Kaigyouをリセット　ターンが進むとこれがないと駄目
+
             textLineWidth += rt1.sizeDelta.x;//ＰＡＮＥＬ２の開始位置のためにＰＮＥＬ１の幅を足す。
+            p2Start = textLineWidth;
+
             hanteiKaigyouWidth += rt1.sizeDelta.x+rt2.sizeDelta.x;//パネル２の行をチェックするために　代入
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
+                p2Kaigyou = kaigyou; p2Start = textLineWidth;
             }
             //Debug.Log(rt1.sizeDelta.x);
 
-            rt2.anchoredPosition//パネル２の開始位置を決める。ｙ軸は下方向マイナスである事に注意 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+            
             textLineWidth += rt2.sizeDelta.x;
             hanteiKaigyouWidth += rt3.sizeDelta.x;
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
@@ -94,5 +97,10 @@ public class t8_4_2_panelLine : MonoBehaviour {
             kaigyou = 0;
         }
         firstTime = false;
+        rt1.anchoredPosition = new Vector2(0, 0);//ＰＡＮＥＬ１をＴＥＸＴＰＮＥＬの左上へ置く。
+
+        rt2.anchoredPosition//パネル２の開始位置を決める。ｙ軸は下方向マイナスである事に注意 
+                = new Vector2(p2Start, -p2Kaigyou * rt1.sizeDelta.y);
+
     }
 }
