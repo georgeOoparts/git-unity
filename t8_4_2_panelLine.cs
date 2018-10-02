@@ -89,16 +89,17 @@ public class t8_4_2_panelLine : MonoBehaviour {
 
             
             textLineWidth += rt2.sizeDelta.x;
+            p3Start = textLineWidth;
             hanteiKaigyouWidth += rt3.sizeDelta.x;
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
-                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt3.sizeDelta.x;
+                kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
+                p3Kaigyou = kaigyou; p3Start = textLineWidth;
             }
 
-            rt3.anchoredPosition 
-                = new Vector2(textLineWidth, -kaigyou * rt1.sizeDelta.y);
+
 
             //エラーチェックのための出力
-            Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
+            //Debug.Log(tpRt.sizeDelta.x + ":::" + hanteiKaigyouWidth);
 
             textLineWidth = 0;//最後にこれらの値をリセットする。
             hanteiKaigyouWidth = 0;
@@ -109,6 +110,9 @@ public class t8_4_2_panelLine : MonoBehaviour {
 
         rt2.anchoredPosition//パネル２の開始位置を決める。ｙ軸は下方向マイナスである事に注意 
                 = new Vector2(p2Start, -p2Kaigyou * rt1.sizeDelta.y);
+
+        rt3.anchoredPosition
+                = new Vector2(p3Start, -p3Kaigyou * rt1.sizeDelta.y);
 
     }
 }
