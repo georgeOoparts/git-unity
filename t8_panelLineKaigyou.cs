@@ -7,7 +7,7 @@ using UnityEngine.UI;
 //t8_panelLine_3:TEXTPANEL1が短すぎるとバグが起こる。
 //t8_panelLine_4_2:TEXTPANEL1が短すぎるとバグが起こる。p1,2,3でついに完成。後は解説文いれるだけ。
 //t8_panelLine_4_3:TEXTPANEL1が短すぎるとバグが起こる。p7まで適応。
-//t8_panelLineKaigyou:panelLineの完成形のはず
+//t8_panelLineKaigyou:panelLineの完成形のはず__ちょっと変える
 public class t8_panelLineKaigyou : MonoBehaviour {
     float textLineWidth = 0;//前のパネルの幅、を入れる変数。
     float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
@@ -97,8 +97,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt2.sizeDelta.x;
                 p2Kaigyou = kaigyou; p2Start = textLineWidth;
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
-            p2Kaigyou = kaigyou;
+           
 
             //ＰＡＮＥＬ3の開始位置のためにＰＮＥＬ2の幅を足す。
             textLineWidth += rt2.sizeDelta.x;
@@ -110,7 +109,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt3.sizeDelta.x;
                 p3Kaigyou = kaigyou; p3Start = textLineWidth;
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            //p3Kaigyouは0にリセットされているので、前のパネルが改行し、
+            //このパネルが改行しない時、p3Kaigyouは０のままなので下の１行がいる。
             p3Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ4の開始位置のためにＰＮＥＬ3の幅を足す。
@@ -124,7 +124,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 p4Kaigyou = kaigyou; p4Start = textLineWidth;
                // Debug.Log(p4Kaigyou);
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            //p4Kaigyouは0にリセットされているので、前のパネルが改行し、
+            //このパネルが改行しない時、p4Kaigyouは０のままなので下の１行がいる。
             p4Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ5の開始位置のためにＰＮＥＬ4の幅を足す。
@@ -137,7 +138,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt5.sizeDelta.x;
                 p5Kaigyou = kaigyou; p5Start = textLineWidth;
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            //p5Kaigyouは0にリセットされているので、前のパネルが改行し、
+            //このパネルが改行しない時、p5Kaigyouは０のままなので下の１行がいる。
             p5Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ6の開始位置のためにＰＮＥＬ5の幅を足す。
@@ -150,7 +152,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++; textLineWidth = 0; hanteiKaigyouWidth = rt6.sizeDelta.x;
                 p6Kaigyou = kaigyou; p6Start = textLineWidth;
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            //p6Kaigyouは0にリセットされているので、前のパネルが改行し、
+            //このパネルが改行しない時、p6Kaigyouは０のままなので下の１行がいる。
             p6Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ7の開始位置のためにＰＮＥＬ6の幅を足す。
@@ -163,7 +166,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++;textLineWidth = 0; //hanteiKaigyouWidth = rt7.sizeDelta.x;
                 p7Kaigyou = kaigyou; p7Start = textLineWidth;
             }
-            //前のパネルが改行し、このパネルが改行しない場合下がいる。
+            //p7Kaigyouは0にリセットされているので、前のパネルが改行し、
+            //このパネルが改行しない時、p7Kaigyouは０のままなので下の１行がいる。
             p7Kaigyou = kaigyou;
 
             //最後にこれらの値をリセットする。
