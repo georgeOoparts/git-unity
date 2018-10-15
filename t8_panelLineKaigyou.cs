@@ -8,6 +8,7 @@ using UnityEngine.UI;
 //t8_panelLine_4_2:TEXTPANEL1が短すぎるとバグが起こる。p1,2,3でついに完成。後は解説文いれるだけ。
 //t8_panelLine_4_3:TEXTPANEL1が短すぎるとバグが起こる。p7まで適応。
 //t8_panelLineKaigyou:panelLineの完成形のはず__ちょっと変える
+//123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 public class t8_panelLineKaigyou : MonoBehaviour {
     float textLineWidth = 0;//前のパネルの幅、を入れる変数。
     float hanteiKaigyouWidth = 0;//ＴＥＸＴＰＡＮＥＬの幅を文字パネルの列が超えていないか判定する変数。
