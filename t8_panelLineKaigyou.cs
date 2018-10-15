@@ -108,10 +108,11 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt2.sizeDelta.x;
                  p2Start = textLineWidth;
+                //panel2は0行目か１行目のどちらかなので、
+                //このＩＦ分の中でのみ改行の数を判定。
                 p2Kaigyou = kaigyou;
             }
            
-
             //ＰＡＮＥＬ3の開始位置のためにＰＮＥＬ2の幅を足す。
             textLineWidth += rt2.sizeDelta.x;
             p3Start = textLineWidth;
@@ -121,10 +122,12 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt3.sizeDelta.x;
-                p3Kaigyou = kaigyou;p3Start = textLineWidth;
+                p3Start = textLineWidth;
             }
-            //p3Kaigyouは0にリセットされているので、前のパネルが改行し、
-            //このパネルが改行しない時、p3Kaigyouは０のままなので下の１行がいる。
+            //p3Kaigyouは0ターンの初め、常に０にリセットされている。
+            //上のif分の中の処理が実行されなくても、
+            //kaigyouの数を継承する必要がある。
+            //なので、if文の外でkaigyouの数を継承する。
             p3Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ4の開始位置のためにＰＮＥＬ3の幅を足す。
@@ -136,11 +139,13 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt4.sizeDelta.x;
-                p4Kaigyou = kaigyou; p4Start = textLineWidth;
+                p4Start = textLineWidth;
                // Debug.Log(p4Kaigyou);
             }
-            //p4Kaigyouは0にリセットされているので、前のパネルが改行し、
-            //このパネルが改行しない時、p4Kaigyouは０のままなので下の１行がいる。
+            //p4Kaigyouは0ターンの初め、常に０にリセットされている。
+            //上のif分の中の処理が実行されなくても、
+            //kaigyouの数を継承する必要がある。
+            //なので、if文の外でkaigyouの数を継承する。
             p4Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ5の開始位置のためにＰＮＥＬ4の幅を足す。
@@ -152,10 +157,12 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt5.sizeDelta.x;
-                p5Kaigyou = kaigyou; p5Start = textLineWidth;
+                p5Start = textLineWidth;
             }
-            //p5Kaigyouは0にリセットされているので、前のパネルが改行し、
-            //このパネルが改行しない時、p5Kaigyouは０のままなので下の１行がいる。
+            ///p5Kaigyouは0ターンの初め、常に０にリセットされている。
+            //上のif分の中の処理が実行されなくても、
+            //kaigyouの数を継承する必要がある。
+            //なので、if文の外でkaigyouの数を継承する。
             p5Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ6の開始位置のためにＰＮＥＬ5の幅を足す。
@@ -167,10 +174,12 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt6.sizeDelta.x;
-                p6Kaigyou = kaigyou; p6Start = textLineWidth;
+                p6Start = textLineWidth;
             }
-            //p6Kaigyouは0にリセットされているので、前のパネルが改行し、
-            //このパネルが改行しない時、p6Kaigyouは０のままなので下の１行がいる。
+            //p6Kaigyouは0ターンの初め、常に０にリセットされている。
+            //上のif分の中の処理が実行されなくても、
+            //kaigyouの数を継承する必要がある。
+            //なので、if文の外でkaigyouの数を継承する。
             p6Kaigyou = kaigyou;
 
             //ＰＡＮＥＬ7の開始位置のためにＰＮＥＬ6の幅を足す。
@@ -182,10 +191,12 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 //hanteiKaigyouWidth = rt7.sizeDelta.x;
                 kaigyou++;textLineWidth = 0;
-                p7Kaigyou = kaigyou; p7Start = textLineWidth;
+                p7Start = textLineWidth;
             }
-            //p7Kaigyouは0にリセットされているので、前のパネルが改行し、
-            //このパネルが改行しない時、p7Kaigyouは０のままなので下の１行がいる。
+            //p7Kaigyouは0ターンの初め、常に０にリセットされている。
+            //上のif分の中の処理が実行されなくても、
+            //kaigyouの数を継承する必要がある。
+            //なので、if文の外でkaigyouの数を継承する。
             p7Kaigyou = kaigyou;
 
             //最後にこれらの値をリセットする。
