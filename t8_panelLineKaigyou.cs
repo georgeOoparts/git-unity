@@ -124,7 +124,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 hanteiKaigyouWidth = rt3.sizeDelta.x;
                 p3Start = textLineWidth;
             }
-            //p3Kaigyouは0ターンの初め、常に０にリセットされている。
+            //p3Kaigyouはターンの初め、常に０にリセットされている。
             //上のif分の中の処理が実行されなくても、
             //kaigyouの数を継承する必要がある。
             //なので、if文の外でkaigyouの数を継承する。
@@ -142,7 +142,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 p4Start = textLineWidth;
                // Debug.Log(p4Kaigyou);
             }
-            //p4Kaigyouは0ターンの初め、常に０にリセットされている。
+            //p4Kaigyouはターンの初め、常に０にリセットされている。
             //上のif分の中の処理が実行されなくても、
             //kaigyouの数を継承する必要がある。
             //なので、if文の外でkaigyouの数を継承する。
@@ -159,7 +159,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 hanteiKaigyouWidth = rt5.sizeDelta.x;
                 p5Start = textLineWidth;
             }
-            ///p5Kaigyouは0ターンの初め、常に０にリセットされている。
+            ///p5Kaigyouはターンの初め、常に０にリセットされている。
             //上のif分の中の処理が実行されなくても、
             //kaigyouの数を継承する必要がある。
             //なので、if文の外でkaigyouの数を継承する。
@@ -176,7 +176,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 hanteiKaigyouWidth = rt6.sizeDelta.x;
                 p6Start = textLineWidth;
             }
-            //p6Kaigyouは0ターンの初め、常に０にリセットされている。
+            //p6Kaigyouはターンの初め、常に０にリセットされている。
             //上のif分の中の処理が実行されなくても、
             //kaigyouの数を継承する必要がある。
             //なので、if文の外でkaigyouの数を継承する。
@@ -193,7 +193,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
                 kaigyou++;textLineWidth = 0;
                 p7Start = textLineWidth;
             }
-            //p7Kaigyouは0ターンの初め、常に０にリセットされている。
+            //p7Kaigyouはターンの初め、常に０にリセットされている。
             //上のif分の中の処理が実行されなくても、
             //kaigyouの数を継承する必要がある。
             //なので、if文の外でkaigyouの数を継承する。
