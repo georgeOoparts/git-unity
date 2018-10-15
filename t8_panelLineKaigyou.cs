@@ -107,7 +107,8 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt2.sizeDelta.x;
-                p2Kaigyou = kaigyou; p2Start = textLineWidth;
+                 p2Start = textLineWidth;
+                p2Kaigyou = kaigyou;
             }
            
 
@@ -120,7 +121,7 @@ public class t8_panelLineKaigyou : MonoBehaviour {
             if (hanteiKaigyouWidth > tpRt.sizeDelta.x) {
                 kaigyou++; textLineWidth = 0;
                 hanteiKaigyouWidth = rt3.sizeDelta.x;
-                p3Kaigyou = kaigyou; p3Start = textLineWidth;
+                p3Kaigyou = kaigyou;p3Start = textLineWidth;
             }
             //p3Kaigyouは0にリセットされているので、前のパネルが改行し、
             //このパネルが改行しない時、p3Kaigyouは０のままなので下の１行がいる。
