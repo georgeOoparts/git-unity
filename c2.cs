@@ -6,11 +6,12 @@ public class c2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        ApplicationChrome.statusBarState = ApplicationChrome.States.Visible;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
