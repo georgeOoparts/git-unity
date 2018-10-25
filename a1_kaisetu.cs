@@ -5,9 +5,29 @@ using UnityEngine;
 public class a1_kaisetu : MonoBehaviour {
 
 
-    //ApplicationChrome:使い方
-    //ApplicationChrome:
+    //AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
+    //オブジェにApplicationChrome.csをアタッチ。
+    //同じオブジェにスクリプトをアタッチ。
+    //スクリプトのスタートに下の文字列を書く。
+    //ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
 
+    //AC_a2:ステータスバーだけを表示
+    //ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
+    //ApplicationChrome.navigationBarState=ApplicationChrome.State.Hidden;
+
+    //AC_a3:ナビゲーションバーだけを表示
+    //ApplicationChrome.navigationBarState=ApplicationChrome.State.Visible;
+
+    //AC_b1:ステータスバー、ナビゲーションバーの状態を変える
+    //通常　ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
+    //画面に映る物の上にかぶせる
+    //ApplicationChrome.statusBarState=
+    //            ApplicationChrome.State.VisiblOverContent;
+    //透明になりながら画面に映るもののうえにかぶさる
+    //ApplicationChrome.statusBarState=
+    //            ApplicationChrome.State.TranslucentOverContent;
+    //隠す
+    //ApplicationChrome.statusBarState=ApplicationChrome.State.Hidden;
 
 
     //g1 最新のコミットメッセージを変更
