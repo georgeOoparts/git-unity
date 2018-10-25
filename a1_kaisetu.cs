@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class a1_kaisetu : MonoBehaviour {
 
+
+    //ApplicationChrome:使い方
+    //ApplicationChrome:
+
+
+
     //g1 最新のコミットメッセージを変更
     //g1 ６下ファイルステータス＞８オブションのコミット＞最後のコミットを上書き
     //g2 無駄に枝別れしたブランチを消す
