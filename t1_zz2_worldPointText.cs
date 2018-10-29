@@ -20,6 +20,6 @@ public class t1_zz2_worldPointText : MonoBehaviour {
         //k3_zz2_a:スクリーン座標＞ワールド座標
         position = Camera.main.ScreenToWorldPoint(position);
         //k2_aaa:text.text = "・・・ "でTEXTのないよう変更。
-        text.text = "screen:: " + position.ToString();
+        text.text = "world :: " + position.ToString();
 	}
 }
