@@ -68,6 +68,8 @@ public class a1_kaisetu : MonoBehaviour {
     //k7_a:オブジェを存在するけど見えなくする。
     //k7_b:オブジェを見えるようにするよ。
     //k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
+    //k8_b:応用。親になっているＯＢＪを得る。
+    //k8_b:oyaPanel = this.gameObject.transform.parent.gameObject;
     //k9_a:左クリック入力　Input.GetMouseButtonDown(0)
     //k10_kataHenkan
     //k10:float>int に小数点以下切り上げで変換。

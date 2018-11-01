@@ -7,18 +7,22 @@ public class t13_leftBottomY : MonoBehaviour {
     //k2_a:どこかに書かれている。Textというクラスを扱うための変数を作成
     Text text;
     int yPosition;
+    GameObject oyaPanel;
+    //k4_a:どこかに書いてあるRectTransformの変数を作る
+    RectTransform RtOya;
     // Use this for initialization
     void Start () {
         //k2_aa:Textをこのオブジェクトで使うためのおまじない
         text = this.gameObject.GetComponent<Text>();
-        //Debug.Log("www");	
-        
+        //k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
+        oyaPanel = this.gameObject.transform.parent.gameObject;
+        //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
+        RtOya = oyaPanel.GetComponent<RectTransform>();
     }
-	
-	// Update is called once per frame
 	void Update () {
         //k10_kataHenkan
-        yPosition = (int)Input.mousePosition.y;
+        //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は - の値)
+        yPosition = (int)RtOya.anchoredPosition.y;
         // k2_aaa:text.text = "・・・ "でTEXTのないよう変更。
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         text.text = "LBY:: " + yPosition;

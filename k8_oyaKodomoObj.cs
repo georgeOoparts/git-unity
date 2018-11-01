@@ -10,5 +10,8 @@ public class k8_oyaKodomoObj : MonoBehaviour {
         //kodomoObj1 = this.gameObject.transform.GetChild(0).gameObject;
         //k8_a:応用。孫になっているＯＢＪを得る。
         //kodomoObj2 = this.gameObject.transform.GetChild(1).gameObject;
+
+        //k8_b:応用。親になっているＯＢＪを得る。
+        //oyaPanel = this.gameObject.transform.parent.gameObject;
     }
 }
