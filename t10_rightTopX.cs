@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class t11_leftBottom : MonoBehaviour {
+public class t10_rightTopX : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
