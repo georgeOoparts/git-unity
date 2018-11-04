@@ -22,7 +22,7 @@ public class t14_rulerMove : MonoBehaviour {
         }
         //k9_b:左クリック入力　ボタンアップInput.GetMouseButtonUp(0)
         //具体例：：if (Input.GetMouseButtonDown(0)) count++;
-        if (Input.GetMouseButtonUp(0)) {
+        if (Input.GetMouseButton(0)) {
             touchEndPos = new Vector3(Input.mousePosition.x,
                                       Input.mousePosition.y,
                                       Input.mousePosition.z);
