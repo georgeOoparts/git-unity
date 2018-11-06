@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
+//PointerEventDataを使うため下が必要。
+using UnityEngine.EventSystems;
+//using PointerEventData;
 
 public class t14_rulerMove : MonoBehaviour {
     private Vector3 objectPos;
@@ -11,8 +14,11 @@ public class t14_rulerMove : MonoBehaviour {
         //Debug.Log("rulerMove");
 	}
 	void Update () {
-        //下に書いてあるメソッドを呼び出す
-        flickControl();
+        
+
+        if (Input.GetMouseButtonDown(0)&& clickUiCheck())
+            //下に書いてあるメソッドを呼び出す
+            flickControl();
     }
     private void flickControl() {
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
@@ -26,7 +32,7 @@ public class t14_rulerMove : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
 
             //Vector3 prePos = this.transform.position;
-            Vector3 diff = 
+            Vector3 diff =
                 Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
 
             //タッチ対応デバイス向け、1本目の指にのみ反応
@@ -44,5 +50,20 @@ public class t14_rulerMove : MonoBehaviour {
             objectPos = Vector3.zero;
             mousePos = Vector3.zero;
         }
+    }
+    private bool clickUiCheck() {
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = Input.mousePosition;
+        List<RaycastResult> result = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, result);
+
+        foreach (RaycastResult raycastResult in result) {
+            // ここに名前を取得する処理を書く
+            // 複数ある場合は全て取得されるため注意
+            if (raycastResult.gameObject.name == "ruler") {
+                return (true);
+            } else return (false);
+        }
+        return (false);
     }
 }
