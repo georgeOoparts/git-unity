@@ -5,29 +5,27 @@ using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 //PointerEventDataを使うため下が必要。
 using UnityEngine.EventSystems;
 
-
+//ruler 四角形の左下と右上のスクリーンポイントを表示するプログラム
 public class t14_rulerMove : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
 
     private bool on=false;
 
-    
-	void Update () {
-
-        if (on == false) {
-            if (Input.GetMouseButtonDown(0)) {
-                if (clickUiCheck()) on = true;
-            }
-        }
+    void Update () {
         
-        if(on) flickControl();
-
-        if (Input.GetMouseButtonUp(0) && on == true) {
-            if (clickUiCheck() == false) on = false;
+        if (Input.GetMouseButtonDown(0)) {
+            //マウスが対象ＵＩの上にあったらtrue
+            if (clickUiCheck()) on = true;
         }
+        //onがtrueならフリックできます。
+        if (on) flickControl();
+        //マウスボタンを上げたらonがfalseになる。
+        if (Input.GetMouseButtonUp(0)) on = false;
+        
     }
     private void flickControl() {
+        //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         //k3_zz2_a:スクリーン座標＞ワールド座標
         //マウスを押したら
@@ -59,6 +57,8 @@ public class t14_rulerMove : MonoBehaviour {
         }
     }
     private bool clickUiCheck() {
+        //マウスが対象ＵＩの上にあったらtrue,
+        //なかったらfalseを返す   
         PointerEventData pointer
                 = new PointerEventData(EventSystem.current);
         pointer.position = Input.mousePosition;
