@@ -4,28 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 
 public class t14_rulerMove : MonoBehaviour {
-    private Vector3 touchStartPos;
-    private Vector3 touchEndPos;
-    
+    private Vector3 objectPos;
+    private Vector3 mousePos;
+
     void Start () {
-        Debug.Log("rulerMove");
+        //Debug.Log("rulerMove");
 	}
 	void Update () {
-        //k9_a:左クリック入力 ボタンダウンInput.GetMouseButtonDown(0)
-        //具体例：：if (Input.GetMouseButtonDown(0)) count++;
+        playerControl();
+    }
+    private void playerControl() {
+
         if (Input.GetMouseButtonDown(0)) {
-            touchStartPos = new Vector3(Input.mousePosition.x,
-                                        Input.mousePosition.y,
-                                        Input.mousePosition.z);
+            objectPos = this.transform.position;
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        //k9_b:左クリック入力　ボタンアップInput.GetMouseButtonUp(0)
-        //具体例：：if (Input.GetMouseButtonDown(0)) count++;
         if (Input.GetMouseButton(0)) {
-            touchEndPos = new Vector3(Input.mousePosition.x,
-                                      Input.mousePosition.y,
-                                      Input.mousePosition.z);
+
+            Vector3 prePos = this.transform.position;
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
+
+            diff.z = 0.0f;
+            this.transform.position = objectPos + diff;
+
         }
-       
-        Debug.Log(touchEndPos);
+        if (Input.GetMouseButtonUp(0)) {
+            objectPos = Vector3.zero;
+            mousePos = Vector3.zero;
+        }
     }
 }
