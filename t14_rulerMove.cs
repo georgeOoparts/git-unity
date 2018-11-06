@@ -10,8 +10,6 @@ public class t14_rulerMove : MonoBehaviour {
     void Start () {
         Debug.Log("rulerMove");
 	}
-	
-	// Update is called once per frame
 	void Update () {
         //k9_a:左クリック入力 ボタンダウンInput.GetMouseButtonDown(0)
         //具体例：：if (Input.GetMouseButtonDown(0)) count++;
