@@ -10,15 +10,37 @@ public class t14_rulerMove : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
 
+    private bool on=false;
+
     void Start () {
         //Debug.Log("rulerMove");
 	}
 	void Update () {
-        
 
-        if (Input.GetMouseButtonDown(0)&& clickUiCheck())
-            //下に書いてあるメソッドを呼び出す
-            flickControl();
+        //if (clickUiCheck()) flickControl();
+
+        if (on == false) {
+            if (Input.GetMouseButtonDown(0)) {
+                if (clickUiCheck()) on = true;
+            }
+        }
+        
+        if(on) flickControl();
+
+        if (Input.GetMouseButtonUp(0) && on == true) {
+            if (clickUiCheck() == false) on = false;
+        }
+
+        //if(on)flickControl();
+        //if (clickUiCheck()) {
+        //    Debug.Log("true");
+        //} else {
+        //    Debug.Log("false");
+        //}
+
+        //if (Input.GetMouseButtonDown(0)&& clickUiCheck())
+        //    //下に書いてあるメソッドを呼び出す
+        //    flickControl();
     }
     private void flickControl() {
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
@@ -52,18 +74,22 @@ public class t14_rulerMove : MonoBehaviour {
         }
     }
     private bool clickUiCheck() {
-        PointerEventData pointer = new PointerEventData(EventSystem.current);
-        pointer.position = Input.mousePosition;
-        List<RaycastResult> result = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointer, result);
+        //if (Input.GetMouseButton(0)) {
+            PointerEventData pointer
+                = new PointerEventData(EventSystem.current);
+            pointer.position = Input.mousePosition;
+            List<RaycastResult> result = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointer, result);
 
-        foreach (RaycastResult raycastResult in result) {
-            // ここに名前を取得する処理を書く
-            // 複数ある場合は全て取得されるため注意
-            if (raycastResult.gameObject.name == "ruler") {
-                return (true);
-            } else return (false);
+            foreach (RaycastResult raycastResult in result) {
+                // ここに名前を取得する処理を書く
+                // 複数ある場合は全て取得されるため注意
+                if (raycastResult.gameObject.name == "ruler") {
+                    return (true);
+                } else return (false);
+            }
+            return (false);
         }
-        return (false);
-    }
+        //return (false);
+    //}
 }
