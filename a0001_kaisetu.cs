@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class a1_kaisetu : MonoBehaviour {
+public class a0001_kaisetu : MonoBehaviour {
 
 
     //AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
