@@ -74,6 +74,8 @@ public class a0001_kaisetu : MonoBehaviour {
     //k10_kataHenkan
     //k10:float>int に小数点以下切り上げで変換。
     //k10:int kazu=(int)fKazu
+    //k0011:textのぼやけを直す
+    //k0011:ヒエラルキー＞scaleを小さくして＞サイズ調整
 
 
 }
