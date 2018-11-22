@@ -76,6 +76,8 @@ public class a0001_kaisetu : MonoBehaviour {
     //k10:int kazu=(int)fKazu
     //k0011:textのぼやけを直す
     //k0011:ヒエラルキー＞scaleを小さくして＞サイズ調整
-
+    //k0012:3dtextをuitextの後ろに表示しようとする。
+    //k0012:uitextをカメラに固定カメラのｚポジション０
+    //＞3dtextのｚポジション９０にするとなぜかuitextの後ろに3dtext表示される
 
 }
