@@ -5,11 +5,13 @@ using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 
 
 public class t0017_1_pageText : MonoBehaviour {
-       
-    Transform page;
+     public GameObject page;  
+    //Transform page;
 	void Start () {
-        page = this.gameObject.GetComponent<Transform>();
-        
+        Instantiate(page);
+        //Instantiate(preNumber);
+        //page = this.gameObject.GetComponent<Transform>();
+
         //Debug.Log("pagetext");
     }
 	
@@ -18,6 +20,6 @@ public class t0017_1_pageText : MonoBehaviour {
         //for (int i = 1; i == 9; i++) {
             //transform.position = new Vector3(0, 5 - 10 * (i - 1), 0);
         //}
-        transform.position = new Vector3((float)-2.8, -5, 0);
+        //transform.position = new Vector3((float)-2.8, -5, 0);
     }
 }
