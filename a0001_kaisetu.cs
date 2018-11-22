@@ -79,5 +79,16 @@ public class a0001_kaisetu : MonoBehaviour {
     //k0012:3dtextをuitextの後ろに表示しようとする。
     //k0012:uitextをカメラに固定カメラのｚポジション０
     //＞3dtextのｚポジション９０にするとなぜかuitextの後ろに3dtext表示される
+    //k0013:３ｄオブジェtransfome回り
+    //k0013_a1: 宣言 Transform page;
+    //k0013_b1;オブジェに当てはめる；
+    //>page = this.gameObject.GetComponent<Transform>();
+    //k0013_c1 オブジェ移動；
+    //>transform.position = new Vector3((float)-2.8, -5, 0);
 
+
+
+
+
+    //＞
 }
