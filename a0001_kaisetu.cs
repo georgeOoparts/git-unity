@@ -85,6 +85,21 @@ public class a0001_kaisetu : MonoBehaviour {
     //>page = this.gameObject.GetComponent<Transform>();
     //k0013_c1 オブジェ移動；
     //>transform.position = new Vector3((float)-2.8, -5, 0);
+    //k0014_00 :プレハブを使う objにはりつけ
+    //public GameObject page;
+    //k0014_a :プレハブを使う
+    //Instantiate(page);
+    //k0014_b1 :プレハブを使う 角度　位置
+    //配置する回転角を設定
+    //Quaternion q = new Quaternion();
+    //q = Quaternion.identity;
+    //      transform.position = new Vector3(0, 5 - 10 * (i - 1), 0);
+    //      Vector3 placePosition
+    //            = new Vector3((float)-2.8, 5 - 10 * (i - 1), 0);
+    //       GameObject obj =Instantiate(page, placePosition, q);
+    //k0014_b2 :プレハブを使う さらに内容変更
+    //GameObject obj = Instantiate(page, placePosition, q);
+    //obj.GetComponent<TextMesh>().text =i.ToString();
 
 
 
