@@ -6,6 +6,7 @@ using UnityEngine;
 public class t0018_cameraUpdownSwipe : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
+    private bool on = false;
     // Use this for initialization
     void Start () {
         //Debug.Log("updownswipe");
@@ -13,7 +14,11 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        flickControl();
+        if (Input.GetMouseButtonDown(0)) on = true;
+       
+        if(on==true)flickControl();
+        //マウスボタンを上げたらonがfalseになる。
+        if (Input.GetMouseButtonUp(0)) on = false;
     }
     private void flickControl() {
         //フリックをするメソッド
