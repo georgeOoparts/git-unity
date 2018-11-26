@@ -7,7 +7,11 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
 
-    Vector3 prediff;
+    Vector3 prediff=new Vector3(0,0,0);
+    Vector3 p1;
+    Vector3 p2;
+
+
 
     void Update() {
         flickControl();
@@ -35,10 +39,13 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
             //}
             diff.x = 0.0f;
             diff.z = 0.0f;
-            
-            this.transform.position = objectPos + diff;
+
+            Debug.Log("diff" + diff.y + ":prediff:" + prediff.y);
 
 
+            if (diff.y==prediff.y)
+                this.transform.position = objectPos + diff;
+            prediff = diff;
         }
         //マウスを上げたら
         if (Input.GetMouseButtonUp(0)) {
