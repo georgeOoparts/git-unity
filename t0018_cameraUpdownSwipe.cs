@@ -6,23 +6,11 @@ using UnityEngine.EventSystems;
 public class t0018_cameraUpdownSwipe : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
-    //private bool on = false;
 
-    Vector3 preDiff = new Vector3(0, 0, 0);
-    //Vector3 diff = new Vector3(0, 0, 0);
-    // Use this for initialization
-    void Start () {
-        //Debug.Log("updownswipe");
-    }
+    Vector3 prediff;
 
-    // Update is called once per frame
-    void LateUpdate() {
+    void Update() {
         flickControl();
-        //if (Input.GetMouseButtonDown(0)) on = true;
-
-        //if(on==true)flickControl();
-        ////マウスボタンを上げたらonがfalseになる。
-        //if (Input.GetMouseButtonUp(0)) on = false;
     }
     private void flickControl() {
         //フリックをするメソッド
@@ -35,7 +23,6 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
-
             //Vector3 prePos = this.transform.position;
             Vector3 diff =
                 Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
@@ -46,8 +33,11 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
             //Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) 
             //- mousePos;
             //}
+            diff.x = 0.0f;
             diff.z = 0.0f;
+            
             this.transform.position = objectPos + diff;
+
 
         }
         //マウスを上げたら
