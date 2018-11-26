@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//1test
 public class t0018_cameraUpdownSwipe : MonoBehaviour {
     private Vector3 objectPos;
     private Vector3 mousePos;
