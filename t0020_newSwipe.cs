@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t0020_newSwipe : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    Vector3 objectPos;
+    Vector3 mousePos;
+    // Use this for initialization
+    void Start () {
         //Debug.Log("newSwipe");
 	}
 	
@@ -15,13 +16,14 @@ public class t0020_newSwipe : MonoBehaviour {
 	}
 
     private void flickControl() {
+        
         //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         //k3_zz2_a:スクリーン座標＞ワールド座標
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
-            Vector3 objectPos = this.transform.position;
-            Vector3  mousePos = 
+            objectPos = this.transform.position;
+            mousePos = 
                 Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         //マウスを押してる最中
