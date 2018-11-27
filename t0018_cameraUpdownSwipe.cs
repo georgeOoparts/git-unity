@@ -43,9 +43,11 @@ public class t0018_cameraUpdownSwipe : MonoBehaviour {
             Debug.Log("diff" + diff.y + ":prediff:" + prediff.y);
 
 
-            if (diff.y==prediff.y)
+           
+            prediff = 
+                Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
+            if (diff.y == prediff.y)
                 this.transform.position = objectPos + diff;
-            prediff = diff;
         }
         //マウスを上げたら
         if (Input.GetMouseButtonUp(0)) {
