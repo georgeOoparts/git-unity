@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//単純な上下フリック完成
 public class t0020_newSwipe : MonoBehaviour {
     Vector3 objectPos;
     Vector3 firstPos;
-    // Use this for initialization
-    void Start () {
-        //Debug.Log("newSwipe");
-	}
-	
-	// Update is called once per frame
+    
 	void Update () {
         flickControl();
     }
@@ -22,13 +17,13 @@ public class t0020_newSwipe : MonoBehaviour {
         //k3_zz2_a:スクリーン座標＞ワールド座標
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
-            objectPos = this.transform.position;
+            //
             firstPos = 
                 Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
-
+            objectPos = this.transform.position;
             //Vector3 prePos = this.transform.position;
             Vector3 diff =
                 Camera.main.ScreenToWorldPoint(Input.mousePosition) - firstPos;
