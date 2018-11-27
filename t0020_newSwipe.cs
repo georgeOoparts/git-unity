@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class t0020_newSwipe : MonoBehaviour {
     Vector3 objectPos;
-    Vector3 mousePos;
+    Vector3 firstPos;
     // Use this for initialization
     void Start () {
         //Debug.Log("newSwipe");
@@ -12,8 +12,8 @@ public class t0020_newSwipe : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        flickControl();
+    }
 
     private void flickControl() {
         
@@ -23,7 +23,7 @@ public class t0020_newSwipe : MonoBehaviour {
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
             objectPos = this.transform.position;
-            mousePos = 
+            firstPos = 
                 Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         //マウスを押してる最中
@@ -31,7 +31,7 @@ public class t0020_newSwipe : MonoBehaviour {
 
             //Vector3 prePos = this.transform.position;
             Vector3 diff =
-                Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
+                Camera.main.ScreenToWorldPoint(Input.mousePosition) - firstPos;
 
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
@@ -39,14 +39,17 @@ public class t0020_newSwipe : MonoBehaviour {
             //Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) 
             //- mousePos;
             //}
+            diff.x = 0.0f; 
             diff.z = 0.0f;
-            this.transform.position = objectPos + diff;
+            if(diff!=Vector3.zero)
+                this.transform.position = objectPos + diff;
+            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         }
         //マウスを上げたら
-        if (Input.GetMouseButtonUp(0)) {
-            objectPos = Vector3.zero;
-            mousePos = Vector3.zero;
-        }
+        //if (Input.GetMouseButtonUp(0)) {
+        //    objectPos = Vector3.zero;
+        //    mousePos = Vector3.zero;
+        //}
     }
 }
