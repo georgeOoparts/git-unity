@@ -25,8 +25,9 @@ public class t0020_newSwipe : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             objectPos = this.transform.position;
             //Vector3 prePos = this.transform.position;
+            //フリックの感覚にする。下にフリックすると上へ移動
             Vector3 diff =
-                Camera.main.ScreenToWorldPoint(Input.mousePosition) - firstPos;
+                firstPos- Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
