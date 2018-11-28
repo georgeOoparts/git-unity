@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//クリックした所からスワイプ先の距離を表示
+//t20newSwipeと一緒に使うとうまくいかない
 
 public class t0019_moveDistance : MonoBehaviour {
     Vector3 objectPos;
@@ -24,8 +26,9 @@ public class t0019_moveDistance : MonoBehaviour {
                 firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Debug.Log("f::" + firstPos
-               // +"now::"+ Camera.main.ScreenToWorldPoint(Input.mousePosition)
-                + "diff::"+ diff.y);
+                //+"now::"+ Camera.main.ScreenToWorldPoint(Input.mousePosition)
+                + "diff::"+ diff.y
+                );
 
         }
     }
