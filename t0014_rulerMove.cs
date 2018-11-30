@@ -16,14 +16,12 @@ public class t0014_rulerMove : MonoBehaviour {
         //Debug.Log("rulerMove");
         if (Input.GetMouseButtonDown(0)) {
             //マウスが対象ＵＩの上にあったらtrue
-            if (clickUiCheck()) on = true;
-        }
-        //onがtrueならフリックできます。
-        if (on) flickControl();
-        //マウスボタンを上げたらonがfalseになる。
-        if (Input.GetMouseButtonUp(0)) on = false;
-        Debug.Log(on);
-        
+            if (clickUiCheck()) {
+                on = true;
+            }
+            if (on) flickControl();
+
+        }        
     }
     Vector3 objectPos;
     Vector3 firstPos;
@@ -34,15 +32,17 @@ public class t0014_rulerMove : MonoBehaviour {
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
             firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(":firsr:"+firstPos);
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
             objectPos = this.transform.position;
+            Debug.Log("obj::"+objectPos);
             //Vector3 prePos = this.transform.position;
             //フリックの感覚にする。下にフリックすると上へ移動
             Vector3 diff =
                 firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+            Debug.Log(diff);
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
             //    diff =
