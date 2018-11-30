@@ -18,8 +18,7 @@ public class t0020_newSwipe : MonoBehaviour {
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
             //
-            firstPos = 
-                Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            firstPos = Input.mousePosition;
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
@@ -27,7 +26,7 @@ public class t0020_newSwipe : MonoBehaviour {
             //Vector3 prePos = this.transform.position;
             //フリックの感覚にする。下にフリックすると上へ移動
             Vector3 diff =
-                firstPos- Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                firstPos- Input.mousePosition;
 
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
@@ -37,9 +36,10 @@ public class t0020_newSwipe : MonoBehaviour {
             //}
             diff.x = 0.0f; 
             diff.z = 0.0f;
-            if(diff!=Vector3.zero)
+            if (diff != Vector3.zero)
+                Camera.main.ScreenToWorldPoint(diff);
                 this.transform.position = objectPos + diff;
-            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            firstPos = Input.mousePosition;
 
         }
         //マウスを上げたら

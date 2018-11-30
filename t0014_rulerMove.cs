@@ -13,7 +13,7 @@ public class t0014_rulerMove : MonoBehaviour {
     private bool on=false;
 
     void Update () {
-        
+        Debug.Log("rulerMove");
         if (Input.GetMouseButtonDown(0)) {
             //マウスが対象ＵＩの上にあったらtrue
             if (clickUiCheck()) on = true;
