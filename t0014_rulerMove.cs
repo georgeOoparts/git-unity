@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 //ruler 四角形の左下と右上のスクリーンポイントを表示するプログラム
 public class t0014_rulerMove : MonoBehaviour {
-    private Vector3 objectPos;
+    //private Vector3 objectPos;
     private Vector3 mousePos;
 
     private bool on=false;
@@ -22,23 +22,26 @@ public class t0014_rulerMove : MonoBehaviour {
         if (on) flickControl();
         //マウスボタンを上げたらonがfalseになる。
         if (Input.GetMouseButtonUp(0)) on = false;
+        Debug.Log(on);
         
     }
+    Vector3 objectPos;
+    Vector3 firstPos;
     private void flickControl() {
         //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         //k3_zz2_a:スクリーン座標＞ワールド座標
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
-            objectPos = this.transform.position;
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
-
+            objectPos = this.transform.position;
             //Vector3 prePos = this.transform.position;
+            //フリックの感覚にする。下にフリックすると上へ移動
             Vector3 diff =
-                Camera.main.ScreenToWorldPoint(Input.mousePosition) - mousePos;
+                firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
@@ -46,15 +49,22 @@ public class t0014_rulerMove : MonoBehaviour {
             //Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) 
             //- mousePos;
             //}
-            diff.z = 0.0f;
-            this.transform.position = objectPos + diff;
 
+            if (diff != Vector3.zero) {
+                //Camera.main.ScreenToWorldPoint(diff);
+                diff.x = 0.0f;
+                diff.z = 0.0f;
+
+                this.transform.position = objectPos + diff;
+                firstPos
+                    = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
         }
         //マウスを上げたら
-        if (Input.GetMouseButtonUp(0)) {
-            objectPos = Vector3.zero;
-            mousePos = Vector3.zero;
-        }
+        //if (Input.GetMouseButtonUp(0)) {
+        //    objectPos = Vector3.zero;
+        //    mousePos = Vector3.zero;
+        //}
     }
     private bool clickUiCheck() {
         //マウスが対象ＵＩの上にあったらtrue,

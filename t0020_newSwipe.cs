@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 //単純な上下フリック完成
 public class t0020_newSwipe : MonoBehaviour {
-    Vector3 objectPos;
-    Vector3 firstPos;
+    
     
 	void Update () {
         flickControl();
     }
-
+    Vector3 objectPos;
+    Vector3 firstPos;
     private void flickControl() {
         //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
