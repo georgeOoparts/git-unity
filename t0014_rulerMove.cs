@@ -72,6 +72,7 @@ public class t0014_rulerMove : MonoBehaviour {
         //    mousePos = Vector3.zero;
         //}
     }
+    //クリックした所にＵＩがあるかどうかを判定するメソッド
     private bool clickUiCheck() {
         //マウスが対象ＵＩの上にあったらtrue,
         //なかったらfalseを返す   
