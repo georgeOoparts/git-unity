@@ -14,14 +14,15 @@ public class t0014_rulerMove : MonoBehaviour {
 
     void Update () {
         //Debug.Log("rulerMove");
-        if (Input.GetMouseButtonDown(0)) {
-            //マウスが対象ＵＩの上にあったらtrue
-            if (clickUiCheck()) {
-                on = true;
-            }
-            if (on) flickControl();
-
-        }        
+        //if (Input.GetMouseButtonDown(0)) {
+        //    //マウスが対象ＵＩの上にあったらtrue
+        //    if (clickUiCheck()) {
+        //        on = true;
+        //    }
+        //}
+        //if (on) flickControl();
+        //if (Input.GetMouseButtonUp(0)) on = false;
+        flickControl();
     }
     Vector3 objectPos;
     Vector3 firstPos;
