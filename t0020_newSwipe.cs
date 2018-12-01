@@ -42,11 +42,6 @@ public class t0020_newSwipe : MonoBehaviour {
                 firstPos 
                     = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
-        }
-        //マウスを上げたら
-        //if (Input.GetMouseButtonUp(0)) {
-        //    objectPos = Vector3.zero;
-        //    mousePos = Vector3.zero;
-        //}
+        }        
     }
 }

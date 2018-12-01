@@ -11,7 +11,6 @@ public class t0018_tupwacth : MonoBehaviour {
     public float interval = 0.35f;
     
     void Update () {
-        
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
         //マウスを押した時
