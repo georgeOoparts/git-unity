@@ -11,7 +11,11 @@ public class t0014_rulerMove : MonoBehaviour {
     private Vector3 mousePos;
 
     private bool on=false;
-
+    RectTransform rt;
+    void Start() {
+        //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
+        rt = this.gameObject.GetComponent<RectTransform>();
+    }
     void Update () {
         //Debug.Log("rulerMove");
         //if (Input.GetMouseButtonDown(0)) {
@@ -22,27 +26,28 @@ public class t0014_rulerMove : MonoBehaviour {
         //}
         //if (on) flickControl();
         //if (Input.GetMouseButtonUp(0)) on = false;
-        flickControl();
+        if (clickUiCheck()) flickControl();
     }
-    Vector3 objectPos;
-    Vector3 firstPos;
+    Vector2 objectPos;
+    Vector2 firstPos;
     private void flickControl() {
         //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         //k3_zz2_a:スクリーン座標＞ワールド座標
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
-            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            firstPos = Input.mousePosition;
             Debug.Log(":firsr:"+firstPos);
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
-            objectPos = this.transform.position;
+            objectPos = rt.anchoredPosition;
             Debug.Log("obj::"+objectPos);
             //Vector3 prePos = this.transform.position;
             //フリックの感覚にする。下にフリックすると上へ移動
-            Vector3 diff =
-                firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 diff =
+                new Vector2(Input.mousePosition.x,Input.mousePosition.y)
+                - firstPos;
             Debug.Log(diff);
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
@@ -51,14 +56,14 @@ public class t0014_rulerMove : MonoBehaviour {
             //- mousePos;
             //}
 
-            if (diff != Vector3.zero) {
+            if (diff != Vector2.zero) {
                 //Camera.main.ScreenToWorldPoint(diff);
                 diff.x = 0.0f;
-                diff.z = 0.0f;
+                //diff.z = 0.0f;
 
-                this.transform.position = objectPos + diff;
+                rt.anchoredPosition= objectPos + diff;
                 firstPos
-                    = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    = Input.mousePosition;
             }
         }
         //マウスを上げたら
