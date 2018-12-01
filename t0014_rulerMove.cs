@@ -42,9 +42,6 @@ public class t0014_rulerMove : MonoBehaviour {
             //}
 
             if (diff != Vector2.zero) {
-                //Camera.main.ScreenToWorldPoint(diff);
-                diff.x = 0.0f;
-                //diff.z = 0.0f;
 
                 this.gameObject.GetComponent<RectTransform>().anchoredPosition 
                     = uiPos + diff;
