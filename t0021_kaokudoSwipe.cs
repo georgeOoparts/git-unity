@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t0021_kaokudoSwipe : MonoBehaviour {
-    public float kasokudo = 5;
+    public float kasokudo = 10;
 	// Use this for initialization
 	void Start () {
         
