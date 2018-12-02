@@ -33,7 +33,6 @@ public class t0014_rulerMove : MonoBehaviour {
             Vector2 diff =
                 new Vector2(Input.mousePosition.x,Input.mousePosition.y)
                 - firstPos;
-            Debug.Log(diff);
             //タッチ対応デバイス向け、1本目の指にのみ反応
             //if (Input.touchSupported) {
             //    diff =
