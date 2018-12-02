@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class t0021_kaokudoSwipe : MonoBehaviour {
     public float kasokudo = 10;
+    public float bunkatu = 10;
 	// Use this for initialization
 	void Start () {
         
@@ -26,7 +27,7 @@ public class t0021_kaokudoSwipe : MonoBehaviour {
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
             objectPos = this.transform.position;
-            //Vector3 prePos = this.transform.position;
+            
             //フリックの感覚にする。下にフリックすると上へ移動
             Vector3 diff =
                 firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -43,7 +44,11 @@ public class t0021_kaokudoSwipe : MonoBehaviour {
                 diff.x = 0.0f;
                 diff.z = 0.0f;
 
-                this.transform.position = objectPos + diff*kasokudo;
+                for(int i=0;i<kasokudo;i++)
+                this.transform.position = objectPos + diff*(i+1);
+
+
+
                 firstPos
                     = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
