@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t0021_kaokudoSwipe : MonoBehaviour {
-
+    public float kasokudo = 5;
 	// Use this for initialization
 	void Start () {
         
@@ -43,7 +43,7 @@ public class t0021_kaokudoSwipe : MonoBehaviour {
                 diff.x = 0.0f;
                 diff.z = 0.0f;
 
-                this.transform.position = objectPos + diff;
+                this.transform.position = objectPos + diff*kasokudo;
                 firstPos
                     = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
