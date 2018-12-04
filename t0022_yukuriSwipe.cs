@@ -18,9 +18,13 @@ public class t0022_yukuriSwipe : MonoBehaviour {
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
         //マウスを押した時
         if (Input.GetMouseButtonDown(0)) {
+            float perIdoukyori = idouKyori / bunkatuSuu;
+            float perIdouJikan = idouJikan/bunkatuSuu;
             //k6_aa:ストップウォッチスタート
             stopwatch.Start();
-            this.transform.position +=new Vector3(0, idouKyori,0);
+            for (float i=1;i<=bunkatuSuu;i++) {
+                this.transform.position += new Vector3(0, perIdoukyori, 0);
+            }
         }
     }
 }
