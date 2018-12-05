@@ -22,13 +22,13 @@ public class t0022_yukuriSwipe : MonoBehaviour {
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
         stopwatch.Start();
 
-        timeElapsed += Time.deltaTime;
+        //timeElapsed += Time.deltaTime;
 
-        if (timeElapsed >= timeOut) {
-            // Do anything
-            Debug.Log(elapse);
-            timeElapsed = 0.0f;
-        }
+        //if (timeElapsed >= timeOut) {
+        //    // Do anything
+        //    Debug.Log(elapse);
+        //    timeElapsed = 0.0f;
+        //}
         //マウスを押した時
         //if (Input.GetMouseButtonDown(0)) {
         //    float perIdoukyori = idouKyori / bunkatuSuu;
@@ -52,8 +52,8 @@ public class t0022_yukuriSwipe : MonoBehaviour {
         //    Vector3 endPosition = new Vector3(0, -10, 0);
         //    float rate = 1;
         //    stopwatch.Start();
-        //    this.transform.position +=
-        //       new Vector3(0, idouKyori * Time.deltaTime, 0);
+            this.transform.position +=
+               new Vector3(0, idouKyori/10 * Time.deltaTime, 0);
         //    //this.transform.position = 
         //        //Vector3.Lerp(startPosition, endPosition, rate);
         //}
