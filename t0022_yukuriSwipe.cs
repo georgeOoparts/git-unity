@@ -10,7 +10,6 @@ public class t0022_yukuriSwipe : MonoBehaviour {
     public float timeOut=3;
     private float timeElapsed;
 
-
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
         = new System.Diagnostics.Stopwatch();
