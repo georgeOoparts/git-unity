@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//スクリーンポイントの距離をワールドの距離にしようとすると
+//カメラ左下のポイントがなんだか入ってくる。注意。
 public class t0024_sokudoChousei : MonoBehaviour {
     Vector3 objectPos;
     Vector3 firstPos;
@@ -29,7 +31,8 @@ public class t0024_sokudoChousei : MonoBehaviour {
                 + "diff_y::" + diff.y
                 + "diff_z::" + diff.z
                 );
-
+            //Debug.Log(
+            //);
         }
     }
 }
