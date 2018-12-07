@@ -8,6 +8,8 @@ public class t0023_1byouGo : MonoBehaviour {
     private float timeElapsed;
     public float v=10;
     public float t = 0.3f;
+    public float chousei = 10;
+    private float l = 1;
 	void Start () {
 
     }
@@ -19,7 +21,7 @@ public class t0023_1byouGo : MonoBehaviour {
             timeElapsed += Time.deltaTime;
             if (timeElapsed <= timeOut) {
                 this.gameObject.transform.position +=
-                    new Vector3(0, -v/t * Time.deltaTime, 0);
+                    new Vector3(0, -chousei*l/t * Time.deltaTime, 0);
             } else {
                 go = false;
                 timeElapsed = 0;
