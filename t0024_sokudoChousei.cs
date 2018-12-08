@@ -14,7 +14,12 @@ public class t0024_sokudoChousei : MonoBehaviour {
         = new System.Diagnostics.Stopwatch();
     // 何秒たったかを変数elapseに入れる
     private float elapse;
-    
+
+    //1秒移動させるのに必要な変数
+    private bool go = false;
+    public float timeOut = 1;
+    private float timeElapsed;
+
 
     void Start () {
 	}
@@ -31,7 +36,7 @@ public class t0024_sokudoChousei : MonoBehaviour {
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
-            Debug.Log(elapse);
+            //Debug.Log(elapse);
             //フリックの感覚にする。下にフリックすると上へ移動
             //あくまでスクリーンポイント
             Vector3 diff= firstPos - Input.mousePosition;
