@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//最終的にこのt24を進化させ、実用に持っていく。
 //スクリーンポイントの距離をワールドの距離にしようとすると
 //カメラ左下のポイントがなんだか入ってくる。注意。
 public class t0024_sokudoChousei : MonoBehaviour {
@@ -12,14 +13,14 @@ public class t0024_sokudoChousei : MonoBehaviour {
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
         = new System.Diagnostics.Stopwatch();
-    // 何秒たったかを変数elapseに入れる
+    // ストップウォッチ　何秒たったかを変数elapseに入れる
     private float elapse;
 
     //1秒移動させるのに必要な変数
     private bool go = false;
+    //timeOutとりあえず１秒に設定。
     public float timeOut = 1;
     private float timeElapsed;
-
 
     void Start () {
 	}
@@ -58,5 +59,7 @@ public class t0024_sokudoChousei : MonoBehaviour {
             //k6_ab:ストップウォッチの時間をリセット
             stopwatch.Reset();
         }
+        //this.transform.position +=
+        //       new Vector3(0, idouKyori / 10 * Time.deltaTime, 0);
     }
 }
