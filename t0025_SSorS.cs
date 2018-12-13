@@ -18,17 +18,16 @@ public class t0025_SSorS : MonoBehaviour {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
         //k6_aa:ストップウォッチスタート
-        stopwatch.Start();
+        //stopwatch.Start();
         ////マウスを押した時
-        //if (Input.GetMouseButtonDown(0)) {
-        //    //k6_aa:ストップウォッチスタート
-        //    stopwatch.Start();
-        //}
-        //if (Input.GetMouseButton(0)) {
-        //    //k6_ab:ストップウォッチの時間をリセット
-        //    stopwatch.Reset();
-        //    Debug.Log(elapse);
-        //}
+        if (Input.GetMouseButtonDown(0)) {
+            //k6_aa:ストップウォッチスタート
+            stopwatch.Start();
+        }
+        if (Input.GetMouseButtonUp(0)) {
+            //k6_ab:ストップウォッチの時間をリセット
+            stopwatch.Reset();
+        }
 
         Debug.Log(elapse);
     }
