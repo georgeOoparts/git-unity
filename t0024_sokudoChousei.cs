@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//最終的にこのt24を進化させ、実用に持っていく。
+//最終的にこのt24を進化させ、実用に持っていく。!!
 //スクリーンポイントの距離をワールドの距離にしようとすると
 //カメラ左下のポイントがなんだか入ってくる。注意。
 public class t0024_sokudoChousei : MonoBehaviour {
