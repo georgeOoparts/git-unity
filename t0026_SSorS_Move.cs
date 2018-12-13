@@ -35,12 +35,48 @@ public class t0026_SSorS_Move : MonoBehaviour {
             //k6_ab:ストップウォッチの時間をリセット
             stopwatch.Reset();
         }
+        //普通下　スワイプの為のメソッド
         flickControl();
     }
 
     Vector3 objectPos;
     Vector3 firstPos;
     private void flickControl() {
+        //フリックをするメソッド
+        //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
+        //k3_zz2_a:スクリーン座標＞ワールド座標
+        //マウスを押したら
+        if (Input.GetMouseButtonDown(0)) {
+            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        //マウスを押してる最中
+        if (Input.GetMouseButton(0)) {
+            objectPos = this.transform.position;
+            //Vector3 prePos = this.transform.position;
+            //フリックの感覚にする。下にフリックすると上へ移動
+            Vector3 diff =
+                firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //タッチ対応デバイス向け、1本目の指にのみ反応
+            //if (Input.touchSupported) {
+            //    diff =
+            //Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) 
+            //- mousePos;
+            //}
+
+            if (diff != Vector3.zero) {
+                //Camera.main.ScreenToWorldPoint(diff);
+                diff.x = 0.0f;
+                diff.z = 0.0f;
+
+                this.transform.position = objectPos + diff;
+                firstPos
+                    = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
+        }
+    }
+
+    private void sSwipe() {
         //フリックをするメソッド
         //k3_a:Input.mousePosition.ToString()でマウスのスクリーンポイント表示
         //k3_zz2_a:スクリーン座標＞ワールド座標
