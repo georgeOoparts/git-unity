@@ -7,6 +7,15 @@ public class t0023_z1_1byougoKai : MonoBehaviour {
     Vector3 objectPos;
     Vector3 firstPos=new Vector3(0,0,0);
 
+    //k6_a:ストップウォッチ関数を使う時のおまじない。
+    private System.Diagnostics.Stopwatch stopwatch
+        = new System.Diagnostics.Stopwatch();
+    // 何秒たったかを変数elapseに入れる
+    private float elapse;
+    //SかSSか判定する変数。
+    public float hanteiSorSS = 0.45f;
+    //---------------------------------------------
+
     //SSするか判定する変数
     private bool goDown = false;
     private bool goUp = false;
@@ -17,15 +26,31 @@ public class t0023_z1_1byougoKai : MonoBehaviour {
     public float t = 0.3f;
     public float chousei = 10;
     private float l = 1;
+    ///SSするか判定する変数
     void Start() {
 
     }
 
     void Update() {
+        //k6_ac:何秒たったかを変数elapseに入れる
+        elapse = (float)stopwatch.Elapsed.TotalSeconds;
+
         if (Input.GetMouseButtonDown(0)) {
+            //k6_aa:ストップウォッチスタート
+            stopwatch.Start();
+
             //最初にタップしたスクリーンポジションを入れる。
             firstPos = Input.mousePosition;
-            goDown = true;
+            //goDown = true;
+        }
+        if (Input.GetMouseButtonUp(0)) {
+            if (elapse <= hanteiSorSS) {
+                Debug.Log("S::" + elapse);
+            } else {
+                Debug.Log("notS this is SS::" + elapse);
+            }
+            //k6_ab:ストップウォッチの時間をリセット
+            stopwatch.Reset();
         }
         if (goDown) {
             sSwipe(2);
