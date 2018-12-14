@@ -9,8 +9,10 @@ public class t0025_SSorS : MonoBehaviour {
         = new System.Diagnostics.Stopwatch();
     // 何秒たったかを変数elapseに入れる
     private float elapse;
-
+    //
     public float hanteiSorSS=0.45f;
+
+    int hanteiSorSSint = 0;
 
     void Start() {
     }
@@ -30,11 +32,25 @@ public class t0025_SSorS : MonoBehaviour {
             
         }
         if (Input.GetMouseButtonUp(0)) {
-            if (elapse <= hanteiSorSS) Debug.Log("S::"+ elapse);
-            else Debug.Log("notS this is SS::" + elapse);
 
+            if (hanteiSorScrollS() == 1) {
+                Debug.Log("S");
+            } else if (hanteiSorScrollS() == 2){
+                Debug.Log("SS");
+            }   
             //k6_ab:ストップウォッチの時間をリセット
             stopwatch.Reset();
         }
     }
+    //判定SorSS Sなら1、SSなら2
+    int hanteiSorScrollS() {
+        if (elapse <= hanteiSorSS) {
+            //Debug.Log("S::" + elapse);
+            return (1);
+        } else {
+            Debug.Log("notS this is SS::" + elapse);
+            return (2);
+        }
+    }
+
 }
