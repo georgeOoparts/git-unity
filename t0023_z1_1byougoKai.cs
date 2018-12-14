@@ -5,7 +5,7 @@ using UnityEngine;
 public class t0023_z1_1byougoKai : MonoBehaviour {
     //スワイプの距離を入れるために使う変数。
     Vector3 objectPos;
-    Vector3 firstPos=new Vector3(0,0,0);
+    Vector3 firstPos;
 
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
