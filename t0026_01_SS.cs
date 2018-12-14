@@ -10,6 +10,19 @@ public class t0026_01_SS : MonoBehaviour {
     private float elapse;
     //SかSSか判定する変数。
     public float hanteiSorSS = 0.45f;
+
+    //1秒移動させるのに必要な変数
+    private bool go = false;
+    //timeOutとりあえず１秒に設定。
+    public float timeOut = 1.2f;
+    private float timeElapsed;
+    //
+
+    //速度調整のための変数
+    public float chousei = 10f;
+    public float l = 10f;
+    public float t = 0.3f;
+
     // Use this for initialization
     void Start () {
 	}
@@ -29,14 +42,27 @@ public class t0026_01_SS : MonoBehaviour {
 
         }
         if (Input.GetMouseButtonUp(0)) {
-            if (elapse <= hanteiSorSS) Debug.Log("S::" + elapse);
-            else Debug.Log("notS this is SS::" + elapse);
+            if (elapse <= hanteiSorSS) {
+                Debug.Log("S::" + elapse);
+                go = true;
+                if (go) {
+                    timeElapsed += Time.deltaTime;
+                    if (timeElapsed <= timeOut) {
+                        this.gameObject.transform.position +=
+                            new Vector3(0, -chousei * l 
+                            / elapse * Time.deltaTime, 0);
+                    } else {
+                        go = false;
+                        timeElapsed = 0;
+                    }
+                }
+            } else Debug.Log("notS this is SS::" + elapse);
 
             //k6_ab:ストップウォッチの時間をリセット
             stopwatch.Reset();
         }
         //普通下　スワイプの為のメソッド
-        sSwipe();
+        //sSwipe();
     }
     Vector3 objectPos;
     Vector3 firstPos;
