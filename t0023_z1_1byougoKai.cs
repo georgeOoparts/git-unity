@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t0023_z1_1byougoKai : MonoBehaviour {
-    private bool go = false;
+    //SSするか判定する変数
+    private bool goDown = false;
+    private bool goUp = false;
+    //
     public float timeOut = 1;
     private float timeElapsed;
     public float v = 10;
@@ -16,19 +19,37 @@ public class t0023_z1_1byougoKai : MonoBehaviour {
 
     void Update() {
         if (Input.GetMouseButtonDown(0))
-            go = true;
-        if (go) {
-            sSwipe();
+            goDown = true;
+        if (goDown) {
+            sSwipe(2);
         }
+
+        if (Input.GetMouseButtonDown(1))
+            goUp = true;
+        if (goUp) {
+            sSwipe(1);
+        }
+
     }
-    private void sSwipe() {
+    private void sSwipe(int i) {
         timeElapsed += Time.deltaTime;
-        if (timeElapsed <= timeOut) {
-            this.gameObject.transform.position +=
-                new Vector3(0, -chousei * l / t * Time.deltaTime, 0);
-        } else {
-            go = false;
-            timeElapsed = 0;
+        if (i == 2) {
+            if (timeElapsed <= timeOut) {
+                this.gameObject.transform.position +=
+                    new Vector3(0, -chousei * l / t * Time.deltaTime, 0);
+            } else {
+                goDown = false;
+                timeElapsed = 0;
+            }
+        } else if (i == 1) {
+            if (timeElapsed <= timeOut) {
+                this.gameObject.transform.position +=
+                    new Vector3(0, chousei * l / t * Time.deltaTime, 0);
+            } else {
+                goUp = false;
+                timeElapsed = 0;
+            }
         }
+
     }
 }
