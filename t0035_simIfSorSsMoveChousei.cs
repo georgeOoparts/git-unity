@@ -7,7 +7,18 @@ public class t0035_simIfSorSsMoveChousei : MonoBehaviour {
     private System.Diagnostics.Stopwatch stopwatch
         = new System.Diagnostics.Stopwatch();
 
+    //単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
+    //で使う変数達。-------------------------------------
+    //一定時間の処理をするかどうかのブール変数
+    private bool jikanShoriHantei = false;
+    //一定の処理時間を決める変数
+    public float timeOut = 1;
+    //時間をためる変数
+    private float tamaruTime;
 
+    //今回の下移動速度を調整するためだけの変数
+    public float chousei = 10;
+    //----------------------------------------------------
 
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
@@ -18,14 +29,15 @@ public class t0035_simIfSorSsMoveChousei : MonoBehaviour {
             //k6_aa:ストップウォッチスタート
             stopwatch.Start();
         }
-        //マウスを押している最中
-        if (Input.GetMouseButton(0)) {
-            Debug.Log(elapse);
-        }
+        
         //マウスボタンを離したら
         if (Input.GetMouseButtonUp(0)) {
             //S_SS判定関数の戻り値1:Sの時
             if (hanteiSorScrollS() == 1) {
+                //ここにSSの処理を書く
+                //
+                //this.transform.position =;
+
                 Debug.Log("S");
             }
             //S_SS判定関数の戻り値2:SSの時
