@@ -9,19 +9,34 @@ public class t0031_z1_sim1byouMethod : MonoBehaviour {
         = new System.Diagnostics.Stopwatch();
     // 何秒たったかを変数elapseに入れる
     private float elapse;
-    public float interval = 0.35f;
+    public float interval = 1.00f;
 
     void Update() {
-        timeHantei();
-        
+        if (Input.GetMouseButton(0)) {
+            timeHantei();
+        }
     }
+    int i = 0;
     void timeHantei() {
         //k6_aa:ストップウォッチスタート
         stopwatch.Start();
-        //k6_ab:ストップウォッチの時間をリセット
-        //stopwatch.Reset();
-        //k6_ac:何秒たったかを変数elapseに入れる
-        elapse = (float)stopwatch.Elapsed.TotalSeconds;
-        Debug.Log(elapse);//何秒たったかを表示させたいときはこれを使う
+        
+        while (true) {
+           //k6_ac:何秒たったかを変数elapseに入れる
+            elapse = (float)stopwatch.Elapsed.TotalSeconds;
+
+            if (elapse <= interval) {
+                //何秒たったかを表示させたいときはこれを使う
+                Debug.Log(elapse);
+                //return (1);
+            } else {
+                //k6_ab:ストップウォッチの時間をリセット
+                stopwatch.Reset();
+                //i++;
+                Debug.Log(i+"回目");
+                //return (0);
+                break;
+            }
+        }
     }
 }
