@@ -11,8 +11,11 @@ public class t0031_z1_sim1byouMethod : MonoBehaviour {
     private float elapse;
     public float interval = 0.35f;
 
-    
     void Update() {
+        timeHantei();
+        
+    }
+    void timeHantei() {
         //k6_aa:ストップウォッチスタート
         stopwatch.Start();
         //k6_ab:ストップウォッチの時間をリセット
