@@ -8,6 +8,10 @@ public class t0033_simSwipeKyori : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        tupDistanseScreen();
+    }
+    //タップしたy軸の距離をスクリーンポイントでdebuglog表示させるプログラム
+    void tupDistanseScreen() {
         if (Input.GetMouseButtonDown(0)) {
             firstPos = Input.mousePosition;
         }
@@ -21,9 +25,5 @@ public class t0033_simSwipeKyori : MonoBehaviour {
                 );
         }
     }
-    //タップしたy軸の距離をスクリーンポイントでdebuglog表示させるプログラム
-    //float tupDistanseScreen() {
-
-    //}
 }
 
