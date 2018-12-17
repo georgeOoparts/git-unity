@@ -1,45 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class t0031_z1_sim1byouMethod : MonoBehaviour {
-    //単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
+    //k6_a:ストップウォッチ関数を使う時のおまじない。
+    private System.Diagnostics.Stopwatch stopwatch
+        = new System.Diagnostics.Stopwatch();
+    private float elapse;
+    private bool mojiOnOff = true;
+    public float interval = 0.35f;
 
-    //一定時間の処理をするかどうかのブール変数
-    private bool jikanShoriHantei = false;
-    //一定の処理時間を決める変数
-    public float timeOut = 1;
-    //時間をためる変数
-    private float tamaruTime;
+    // Use this for initialization
+    void Start() {
+        
+        //k6_aa:ストップウォッチスタート
+        stopwatch.Start();
+    }
 
-    //今回の下移動速度を調整するためだけの変数
-    public float chousei = 10;
-
+    // Update is called once per frame
     void Update() {
-        //左クリックされたら
-        if (Input.GetMouseButtonDown(0)) {
-            //論理時間処理判定変数が真になる。
-            jikanShoriHantei = true;
-        }
-        //論理時間処理判定関数が真ならば
-        if (jikanShoriHantei) {
-            //tamaruTimeに時間が溜まっていく
-            tamaruTime += Time.deltaTime;
-            //tamaruTimeが設定した時間を越えなければ
-            if (tamaruTime <= timeOut) {
-                //この中に時間内にしたい処理を書く。
-                this.gameObject.transform.position +=
-                    new Vector3(0, -chousei * Time.deltaTime, 0);
-            } else {//tamaruTimeが設定した時間を越えたならば
-                //論理時間処理判定変数が偽になる。
-                jikanShoriHantei = false;
-                //tamaruTimeが0にリセット
-                tamaruTime = 0;
+        //k6_ac:何秒たったかを変数elapseに入れる
+        elapse = (float)stopwatch.Elapsed.TotalSeconds;
+        //Debug.Log(elapse);//何秒たったかを表示させたいときはこれを使う
+        if (mojiOnOff == true) {
+            if (elapse >= interval) {
+                mojiOnOff = false;
+                //k7_a:オブジェを存在するけど見えなくする。
+                this.gameObject.GetComponent<Image>().enabled = false;
+                //k6_ab:ストップウォッチの時間をリセット
+                stopwatch.Reset();
+                //k6_aa:ストップウォッチスタート
+                stopwatch.Start();
             }
+        } else if (elapse >= interval) {
+            mojiOnOff = true;
+            //k7_b:オブジェを見えるようにするよ。
+            this.gameObject.GetComponent<Image>().enabled = true;
+            //k6_ab:ストップウォッチの時間をリセット
+            stopwatch.Reset();
+            //k6_aa:ストップウォッチスタート
+            stopwatch.Start();
         }
     }
-    //bool 1byouHantei() {
-
-    //}
-
 }
