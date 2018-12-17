@@ -40,8 +40,7 @@ public class t0032_simTupJikanHantei : MonoBehaviour {
     private float elapse;
     //時間判定の何秒以内かを決める変数。
     public float hanteiSorSS = 0.45f;
-    //SかSSの判定関数で戻り値が１ならS、2ならSSを入れる変数　
-    int hanteiSorSSint = 0;
+    
     //判定SorSS Sなら1、SSなら2を返す。
     int hanteiSorScrollS() {
         //経過時間elapseが判定時間hanteiSorSS以下ならば
