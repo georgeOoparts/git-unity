@@ -26,9 +26,10 @@ public class t0031_sim1byouMove : MonoBehaviour {
             tamaruTime += Time.deltaTime;
             //tamaruTimeが設定した時間を越えなければ
             if (tamaruTime <= timeOut) {
-                //この中に時間内にしたい処理を書く。
+                //この中に時間内にしたい処理を書く。------
                 this.gameObject.transform.position +=
                     new Vector3(0, -chousei * Time.deltaTime, 0);
+                //-----------------------------------------
             } else {//tamaruTimeが設定した時間を越えたならば
                 //論理時間処理判定変数が偽になる。
                 jikanShoriHantei = false;
