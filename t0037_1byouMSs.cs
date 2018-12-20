@@ -5,7 +5,7 @@ using UnityEngine;
 //単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
 //上スワイプすると（メインカメラが）下移動するプログラム、
 //下スワイプすると（メインカメラが）上移動するプログラム、追加
-public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
+public class t0037_1byouMSs : MonoBehaviour {
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
         = new System.Diagnostics.Stopwatch();
@@ -45,9 +45,9 @@ public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
         }
         //マウスボタンを押している最中
         if (Input.GetMouseButtonUp(0)) {
-            
+
             if (upDownHantei() == 1//upTupされたら
-                && hanteiSorScrollS()==1//SSならば
+                && hanteiSorScrollS() == 1//SSならば
                 ) {
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
