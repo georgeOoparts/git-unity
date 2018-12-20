@@ -6,6 +6,15 @@ using UnityEngine;
 //上スワイプすると（メインカメラが）下移動するプログラム、
 //下スワイプすると（メインカメラが）上移動するプログラム、追加
 public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
+    //k6_a:ストップウォッチ関数を使う時のおまじない。
+    private System.Diagnostics.Stopwatch stopwatch
+        = new System.Diagnostics.Stopwatch();
+
+    // 何秒たったかを変数elapseに入れる。ストップウォッチ
+    private float elapse;
+    //時間判定の何秒以内かを決める変数。hanteiSorScrollS()で使う
+    public float hanteiSorSS = 0.45f;
+
     //upDownHantei
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos = new Vector3(0, 0, 0);
@@ -24,15 +33,22 @@ public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
     public float chousei = 10;
 
     void Update() {
+        //k6_ac:何秒たったかを変数elapseに入れる
+        elapse = (float)stopwatch.Elapsed.TotalSeconds;
+
         //マウスボタンを押したらならば
         if (Input.GetMouseButtonDown(0)) {
+            //k6_aa:ストップウォッチスタート
+            stopwatch.Start();
             //最初にタップしたスクリーンポジションを入れる。
             firstPos = Input.mousePosition;
         }
         //マウスボタンを押している最中
         if (Input.GetMouseButtonUp(0)) {
-            //upTupされたら
-            if (upDownHantei() == 1) {
+            
+            if (upDownHantei() == 1//upTupされたら
+                && hanteiSorScrollS()==1//SSならば
+                ) {
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
                 //upを判定するint変数
@@ -43,6 +59,8 @@ public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
                 //updownを判定するint変数
                 upDown = 2;
             }
+            //k6_ab:ストップウォッチの時間をリセット
+            stopwatch.Reset();
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
@@ -80,5 +98,16 @@ public class t0037_1byouMoveUpDownVchousei : MonoBehaviour {
             //Debug.Log("down");
             return (2);
         } else return (0);
+    }
+    //判定SorSS Sなら1、SSなら2を返す。
+    int hanteiSorScrollS() {
+        //経過時間elapseが判定時間hanteiSorSS以下ならば
+        if (elapse <= hanteiSorSS) {
+            //Debug.Log("S::" + elapse);
+            return (1);
+        } else {//経過時間elapseが判定時間hanteiSorSSより大きいならば
+            //Debug.Log("notS this is SS::" + elapse);
+            return (2);
+        }
     }
 }
