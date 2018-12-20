@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class t0027_upDownHantei : MonoBehaviour {
+    //upDownHantei
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
     //上下判定で使う変数

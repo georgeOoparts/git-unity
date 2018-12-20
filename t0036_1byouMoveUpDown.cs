@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
+//上スワイプすると（メインカメラが）上移動するプログラム、
+//下スワイプすると（メインカメラが）下移動するプログラム、追加
 public class t0036_1byouMoveUpDown : MonoBehaviour {
     //upDownHantei
     //スワイプの距離を入れるために使う変数。
@@ -9,8 +12,6 @@ public class t0036_1byouMoveUpDown : MonoBehaviour {
     //upDownHantei
     //上下判定で使う変数
     int upDown = 0;
-
-    //単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
 
     //一定時間の処理をするかどうかのブール変数
     private bool jikanShoriHantei = false;
@@ -23,12 +24,14 @@ public class t0036_1byouMoveUpDown : MonoBehaviour {
     public float chousei = 10;
 
     void Update() {
+        //マウスボタンを押したらならば
         if (Input.GetMouseButtonDown(0)) {
             //最初にタップしたスクリーンポジションを入れる。
             firstPos = Input.mousePosition;
         }
+        //マウスボタンを押している最中
         if (Input.GetMouseButtonUp(0)) {
-            //左クリックされたら
+            //upTupされたら
             if (upDownHantei() == 1) {
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
@@ -42,13 +45,8 @@ public class t0036_1byouMoveUpDown : MonoBehaviour {
             if (tamaruTime <= timeOut) {
                 //この中に時間内にしたい処理を書く。------
 
-
                 this.gameObject.transform.position +=
                     new Vector3(0, -chousei * Time.deltaTime, 0);
-                
-                
-                
-                
                 
                 
                 //-----------------------------------------
