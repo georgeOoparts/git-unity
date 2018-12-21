@@ -15,7 +15,7 @@ public class t0038_1sMSVChousei : MonoBehaviour {
     //時間判定の何秒以内かを決める変数。hanteiSorScrollS()で使う
     public float hanteiSorSS = 0.45f;
 
-    //upDownHantei
+    //upDownHantei,hanteiSorScrollS
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos = new Vector3(0, 0, 0);
     //upDownHantei
@@ -30,8 +30,11 @@ public class t0038_1sMSVChousei : MonoBehaviour {
     private float tamaruTime;
 
     //今回の下移動速度を調整するためだけの変数
-    public float chousei = 10;
+    public float chousei = 0.1f;
 
+    //tupDistanseScreenBack
+    //スワイプ距離を移動のため入れる変数
+    float swipeKyori = 0;
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
@@ -71,11 +74,15 @@ public class t0038_1sMSVChousei : MonoBehaviour {
             //tamaruTimeが設定した時間を越えなければ
             if (tamaruTime <= timeOut) {
                 //この中に時間内にしたい処理を書く。------
-                //updownを判定するint変数が1ならば
+                //updownを判定するint変数が1ならば上スワイプ、下移動
                 if (upDown == 1) {
+                    tupDistanseScreenBack();
+                    Debug.Log(swipeKyori);
                     //オブジェ上移動
                     this.gameObject.transform.position +=
-                   new Vector3(0, -chousei * Time.deltaTime, 0);
+                   new Vector3(0, -chousei 
+                   //* swipeKyori
+                   * Time.deltaTime, 0);
                 } else if (upDown == 2) {//updownを判定するint変数が2ならば
                     //オブジェ下移動
                     this.gameObject.transform.position +=
@@ -88,6 +95,17 @@ public class t0038_1sMSVChousei : MonoBehaviour {
                 //tamaruTimeが0にリセット
                 tamaruTime = 0;
             }
+        }
+    }
+    //タップしたy軸の距離をv3スクリーンポイントで返すメソッド
+    //下スワイプ　＋の値、上スワイプ　－の値
+    void tupDistanseScreenBack() {
+        
+        //マウスを押してる最中
+        if (Input.GetMouseButtonUp(0)) {
+            //フリックの感覚にする。下にフリックすると上へ移動
+            Vector3 diff = firstPos - Input.mousePosition;
+            swipeKyori = diff.y;
         }
     }
     //マウス入力upは1、downは2,どちらでもないは0を返す。
