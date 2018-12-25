@@ -25,16 +25,16 @@ public class t0030_simSwipe : MonoBehaviour {
             objectPos = this.transform.position;
             //フリックの感覚にする。下にフリックすると上へ移動
             //初めのマウスの位置と今のマウスの位置の差異
-            Vector3 diff =
+            Vector3 diffSwipe =
                 firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //初めのマウスの位置と今のマウスの位置の差異が0じゃなければ
-            if (diff != Vector3.zero) {
+            if (diffSwipe != Vector3.zero) {
                 //Camera.main.ScreenToWorldPoint(diff);
-                diff.x = 0.0f;
-                diff.z = 0.0f;
+                diffSwipe.x = 0.0f;
+                diffSwipe.z = 0.0f;
                 //カメラの位置にマウスの位置の差異を足す。
-                this.transform.position = objectPos + diff;
+                this.transform.position = objectPos + diffSwipe;
                 //初めのマウスの位置を最新のマウスの位置に更新　
                 firstPos
                     = Camera.main.ScreenToWorldPoint(Input.mousePosition);
