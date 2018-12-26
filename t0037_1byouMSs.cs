@@ -5,6 +5,7 @@ using UnityEngine;
 //単純クリックすると（メインカメラが）一定時間、下移動するプログラム。
 //上スワイプすると（メインカメラが）下移動するプログラム、
 //下スワイプすると（メインカメラが）上移動するプログラム、追加
+//S,SS切り分け、SSだったら上、下スワイプ　追加、Sだったら何もやらない。
 public class t0037_1byouMSs : MonoBehaviour {
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
