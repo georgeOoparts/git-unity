@@ -10,6 +10,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
     //SSだったらSS、Sなら普通のスワイプ
     //ssの時、タップでssを止める
     //SSの速度調整も追加　スワイプ距離でSSの速度が決まる
+    //上下スワイプの決定版。
 
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
@@ -55,20 +56,10 @@ public class t0041_sorssVchousei : MonoBehaviour {
         if (Input.GetMouseButtonUp(0)) {
             //マウスダウンの時とアップの時の差をdiffに入れる。
             diff = Input.mousePosition - firstPos;
-            if (upDownHantei() == 1//upTupされたら
-                && hanteiSorScrollS() == 1//SSならば
-                ) {
+            //SSならば
+            if (hanteiSorScrollS() == 1) {
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
-                //upを判定するint変数
-                upDown = 1;
-            } else if (upDownHantei() == 2//downTupされたら
-                 && hanteiSorScrollS() == 1//SSならば
-                ) {
-                //論理時間処理判定変数が真になる。
-                jikanShoriHantei = true;
-                //updownを判定するint変数
-                upDown = 2;
             }
             //k6_ab:ストップウォッチの時間をリセット
             stopwatch.Reset();
@@ -130,17 +121,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
             }
         }
     }
-    //マウス入力upは1、downは2,どちらでもないは0を返す。
-    int upDownHantei() {
-        //Vector3 diff = Input.mousePosition - firstPos;
-        if (diff.y > 0) {
-            //Debug.Log("up");
-            return (1);
-        } else if (diff.y < 0) {
-            //Debug.Log("down");
-            return (2);
-        } else return (0);
-    }
+    
     //判定SorSS Sなら1、SSなら2を返す。
     int hanteiSorScrollS() {
         //経過時間elapseが判定時間hanteiSorSS以下ならば
