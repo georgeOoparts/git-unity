@@ -17,11 +17,15 @@ public class t0042_ym_pageText2 : MonoBehaviour {
             Quaternion q = new Quaternion();
             q = Quaternion.identity;
             //transform.position = new Vector3(0, 5 - 10 * (i - 1), 0);
+            //まずは目次のページから
             Vector3 placePosition
                 = new Vector3((float)-2.8, 5 - 10 * (i - 1), 0);
             GameObject obj = Instantiate(page, placePosition, q);
 
             obj.GetComponent<TextMesh>().text = i.ToString();
+
+            //フラグのページ
+
 
         }
     }
