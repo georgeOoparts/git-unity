@@ -6,7 +6,9 @@ using UnityEngine;
 //上スワイプすると（メインカメラが）下移動するプログラム、
 //下スワイプすると（メインカメラが）上移動するプログラム、追加
 //S,SS切り分け、SSだったら上、下スワイプ　追加、Sだったら何もやらない。
-public class t0037_1byouMSs : MonoBehaviour {
+//SSだったらSS、Sなら普通のスワイプ
+
+public class t0039_sMoveSSgo : MonoBehaviour {
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
         = new System.Diagnostics.Stopwatch();
@@ -34,7 +36,7 @@ public class t0037_1byouMSs : MonoBehaviour {
     public float chousei = 10;
 
     //マウスダウンの時とアップの時の差をdiffに入れる。
-    Vector3 diff =new Vector3(0,0,0);
+    Vector3 diff = new Vector3(0, 0, 0);
 
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
