@@ -37,7 +37,8 @@ public class t0036_1byouMoveUpDown : MonoBehaviour {
                 jikanShoriHantei = true;
                 //upを判定するint変数
                 upDown = 1;
-            } else if (upDownHantei() == 2) {
+            }//downTupされたら 
+            else if (upDownHantei() == 2) {
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
                 //updownを判定するint変数
