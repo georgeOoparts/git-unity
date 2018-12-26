@@ -9,7 +9,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
     //S,SS切り分け、SSだったら上、下スワイプ　追加、Sだったら何もやらない。
     //SSだったらSS、Sなら普通のスワイプ
     //ssの時、タップでssを止める
-    //SSの速度調整も追加
+    //SSの速度調整も追加　スワイプ距離でSSの速度が決まる
 
     //k6_a:ストップウォッチ関数を使う時のおまじない。
     private System.Diagnostics.Stopwatch stopwatch
@@ -35,7 +35,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
     private float tamaruTime;
 
     //今回の下移動速度を調整するためだけの変数
-    public float chousei = 10;
+    public float chousei = 0.07f;
 
     //マウスダウンの時とアップの時の差をdiffに入れる。
     Vector3 diff = new Vector3(0, 0, 0);
@@ -75,7 +75,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
-
+            //SS中にタップがあったらSSを止める
             if (Input.GetMouseButtonDown(0)) {
                 tamaruTime = timeOut;
             }
@@ -84,17 +84,10 @@ public class t0041_sorssVchousei : MonoBehaviour {
             //tamaruTimeが設定した時間を越えなければ
             if (tamaruTime <= timeOut) {
                 //この中に時間内にしたい処理を書く。------
-                //updownを判定するint変数が1ならば
-                if (upDown == 1) {
-                    //オブジェ上移動
-                    this.gameObject.transform.position +=
-                   new Vector3(0, -chousei * Time.deltaTime, 0);
-                } else if (upDown == 2) {//updownを判定するint変数が2ならば
-                    //オブジェ下移動
-                    this.gameObject.transform.position +=
-                   new Vector3(0, chousei * Time.deltaTime, 0);
-                }
-                //-----------------------------------------
+                //diffがプラスかマイナスかによって上下の方向が決まる
+                this.gameObject.transform.position +=
+                   new Vector3(0, -chousei*diff.y * Time.deltaTime, 0);
+                                //-----------------------------------------
             } else {//tamaruTimeが設定した時間を越えたならば
                 //論理時間処理判定変数が偽になる。
                 jikanShoriHantei = false;
