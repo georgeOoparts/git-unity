@@ -8,7 +8,7 @@ public class t0030_simSwipe : MonoBehaviour {
         flickControl();
     }
     Vector3 objectPos;
-    Vector3 firstPos;
+    Vector3 FCfirstPos;
     
     private void flickControl() {
         //フリックをするメソッド
@@ -17,7 +17,7 @@ public class t0030_simSwipe : MonoBehaviour {
         //マウスを押したら
         if (Input.GetMouseButtonDown(0)) {
             //最初のマウスの位置
-            firstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            FCfirstPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
         //マウスを押してる最中
         if (Input.GetMouseButton(0)) {
@@ -26,7 +26,7 @@ public class t0030_simSwipe : MonoBehaviour {
             //フリックの感覚にする。下にフリックすると上へ移動
             //初めのマウスの位置と今のマウスの位置の差異
             Vector3 diffSwipe =
-                firstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                FCfirstPos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             //初めのマウスの位置と今のマウスの位置の差異が0じゃなければ
             if (diffSwipe != Vector3.zero) {
@@ -36,7 +36,7 @@ public class t0030_simSwipe : MonoBehaviour {
                 //カメラの位置にマウスの位置の差異を足す。
                 this.transform.position = objectPos + diffSwipe;
                 //初めのマウスの位置を最新のマウスの位置に更新　
-                firstPos
+                FCfirstPos
                     = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
         }
