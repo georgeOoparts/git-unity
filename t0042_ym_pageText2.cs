@@ -25,6 +25,11 @@ public class t0042_ym_pageText2 : MonoBehaviour {
             obj.GetComponent<TextMesh>().text = i.ToString();
 
             //フラグのページ
+            Vector3 placePositionF
+                = new Vector3((float)2.8, 5 - 10 * (i - 1), 0);
+            GameObject objF = Instantiate(page, placePositionF, q);
+
+            objF.GetComponent<TextMesh>().text ="F"+ i.ToString();
 
 
         }
