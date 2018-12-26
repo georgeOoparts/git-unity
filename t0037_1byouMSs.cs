@@ -33,6 +33,9 @@ public class t0037_1byouMSs : MonoBehaviour {
     //今回の下移動速度を調整するためだけの変数
     public float chousei = 10;
 
+    //マウスダウンの時とアップの時の差をdiffに入れる。
+    Vector3 diff =new Vector3(0,0,0);
+
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
@@ -46,7 +49,8 @@ public class t0037_1byouMSs : MonoBehaviour {
         }
         //マウスボタンを押している最中
         if (Input.GetMouseButtonUp(0)) {
-
+            //マウスダウンの時とアップの時の差をdiffに入れる。
+            Vector3 diff = Input.mousePosition - firstPos;
             if (upDownHantei() == 1//upTupされたら
                 && hanteiSorScrollS() == 1//SSならば
                 ) {
@@ -93,7 +97,7 @@ public class t0037_1byouMSs : MonoBehaviour {
     }
     //マウス入力upは1、downは2,どちらでもないは0を返す。
     int upDownHantei() {
-        Vector3 diff = Input.mousePosition - firstPos;
+        //Vector3 diff = Input.mousePosition - firstPos;
         if (diff.y > 0) {
             //Debug.Log("up");
             return (1);
