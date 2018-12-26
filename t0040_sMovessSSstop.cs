@@ -74,6 +74,10 @@ public class t0040_sMovessSSstop : MonoBehaviour {
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
+
+            if (Input.GetMouseButtonDown(0)) {
+                tamaruTime = timeOut;
+            }
             //tamaruTimeに時間が溜まっていく
             tamaruTime += Time.deltaTime;
             //tamaruTimeが設定した時間を越えなければ
