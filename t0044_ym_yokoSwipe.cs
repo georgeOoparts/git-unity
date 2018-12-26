@@ -5,6 +5,7 @@ using UnityEngine;
 public class t0044_ym_yokoSwipe : MonoBehaviour {
     //縦横スワイプをを判定するメソッド
     //単純横スワイプ
+    //横成分が大きい場合のみ横スワイプ
     
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
@@ -16,9 +17,12 @@ public class t0044_ym_yokoSwipe : MonoBehaviour {
         }
         if (Input.GetMouseButtonUp(0)) {
 
-            Debug.Log(tateYokoHantei());
         }
-        flickControl();
+        if (tateYokoHantei()==1) {
+            flickControl();
+            Debug.Log(tateYokoHantei());
+
+        }
     }
     Vector3 objectPos;
     Vector3 FCfirstPos;
