@@ -7,6 +7,8 @@ public class t0045_yokoTateSS : MonoBehaviour {
     //単純横スワイプ
     //横成分が大きい場合のみ横スワイプ
     //横SSのみSS移動。普通のスワイプの動きはしない。実験
+    //横SSが1秒の動きをするよう調整　→移動
+
 
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
@@ -31,7 +33,7 @@ public class t0045_yokoTateSS : MonoBehaviour {
     private float tamaruTime;
 
     //今回の下移動速度を調整するためだけの変数
-    public float chousei = 10;
+    public float chousei = 100;
 
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
@@ -66,7 +68,9 @@ public class t0045_yokoTateSS : MonoBehaviour {
                 //オブジェ移動
                 this.gameObject.transform.position +=
                    new Vector3(-chousei * Time.deltaTime, 0,0);
-                //tamaruTimeが設定した時間を越えたならば
+            }
+            //tamaruTimeが設定した時間を越えたならば
+            else {
                 //論理時間処理判定変数が偽になる。
                 jikanShoriHantei = false;
                 //tamaruTimeが0にリセット
