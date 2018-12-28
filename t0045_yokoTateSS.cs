@@ -6,7 +6,7 @@ public class t0045_yokoTateSS : MonoBehaviour {
     //縦横スワイプをを判定するメソッド
     //単純横スワイプ
     //横成分が大きい場合のみ横スワイプ
-    //横SSのみSS移動。普通のスワイプの動きはしない。
+    //横SSのみSS移動。普通のスワイプの動きはしない。実験
 
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
@@ -30,6 +30,9 @@ public class t0045_yokoTateSS : MonoBehaviour {
     //時間をためる変数
     private float tamaruTime;
 
+    //今回の下移動速度を調整するためだけの変数
+    public float chousei = 10;
+
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
@@ -41,23 +44,17 @@ public class t0045_yokoTateSS : MonoBehaviour {
             firstPos = Input.mousePosition;
         }
         if (Input.GetMouseButtonUp(0)) {
+            //diff = Input.mousePosition - firstPos;
+
             if (tateYokoHantei() == 1) {
-                //マウスダウンの時とアップの時の差をdiffに入れる。
-                diff = Input.mousePosition - firstPos;
                 //SSならば
                 if (hanteiSorScrollS() == 1) {
                     //論理時間処理判定変数が真になる。
                     jikanShoriHantei = true;
-                    //upを判定するint変数
                 }
-                //SSならば
-                else if (hanteiSorScrollS() == 1) {
-                    //論理時間処理判定変数が真になる。
-                    jikanShoriHantei = true;
-                }
-                //k6_ab:ストップウォッチの時間をリセット
-                stopwatch.Reset();
             }
+            //k6_ab:ストップウォッチの時間をリセット       
+            stopwatch.Reset();
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
@@ -66,17 +63,10 @@ public class t0045_yokoTateSS : MonoBehaviour {
             //tamaruTimeが設定した時間を越えなければ
             if (tamaruTime <= timeOut) {
                 //この中に時間内にしたい処理を書く。------
-                //updownを判定するint変数が1ならば
-                if (upDown == 1) {//オブジェ上移動
-                    this.gameObject.transform.position +=
-                   new Vector3(0, -chousei * Time.deltaTime, 0);
-                } else if (upDown == 2) {//updownを判定するint変数が2ならば
-                    //オブジェ下移動
-                    this.gameObject.transform.position +=
-                   new Vector3(0, chousei * Time.deltaTime, 0);
-                }
-                //-----------------------------------------
-            } else {//tamaruTimeが設定した時間を越えたならば
+                //オブジェ移動
+                this.gameObject.transform.position +=
+                   new Vector3(-chousei * Time.deltaTime, 0,0);
+                //tamaruTimeが設定した時間を越えたならば
                 //論理時間処理判定変数が偽になる。
                 jikanShoriHantei = false;
                 //tamaruTimeが0にリセット
