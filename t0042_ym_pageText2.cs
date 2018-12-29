@@ -35,7 +35,7 @@ public class t0042_ym_pageText2 : MonoBehaviour {
 
             //RRのページ
             Vector3 placePositionR
-                = new Vector3((float)8.6+yoyuu, 5 - 10 * (i - 1), 1);
+                = new Vector3((float)8.4+yoyuu, 5 - 10 * (i - 1), 1);
             GameObject objR = Instantiate(page, placePositionR, q);
 
             objR.GetComponent<TextMesh>().text = "R" + i.ToString();
