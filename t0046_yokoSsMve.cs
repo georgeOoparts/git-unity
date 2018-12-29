@@ -60,12 +60,15 @@ public class t0046_yokoSsMve : MonoBehaviour {
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
-            if (this.gameObject.transform.position.x <= 2.8) {
+            if (this.gameObject.transform.position.x <= 5.6) {
                 //オブジェ移動
                 this.gameObject.transform.position +=
                     new Vector3(chousei * Time.deltaTime, 0, 0);
             } 
             else {
+                //オブジェ移動
+                this.gameObject.transform.position =
+                    new Vector3((float)5.6, 0, 0);
                 //論理時間処理判定変数が偽になる。
                 jikanShoriHantei = false;
             }
