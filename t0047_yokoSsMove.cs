@@ -50,7 +50,8 @@ public class t0047_yokoSsMove : MonoBehaviour {
             firstPos = Input.mousePosition;
         }
         if (Input.GetMouseButtonUp(0)) {
-            //diff = Input.mousePosition - firstPos;
+            //←→判定の判定のためだけに使うdiff
+            diff = Input.mousePosition - firstPos;
 
             if (tateYokoHantei() == 1) {
                 //SSならば
@@ -65,17 +66,20 @@ public class t0047_yokoSsMove : MonoBehaviour {
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
             if (yokoPosi == 1) {
-                if (this.gameObject.transform.position.x <= 5.6) {
-                    //オブジェ移動
-                    this.gameObject.transform.position +=
-                        new Vector3(chousei * Time.deltaTime, 0, 0);
-                } else {
-                    //オブジェ移動
-                    this.gameObject.transform.position =
-                        new Vector3((float)5.6, 0, 0);
-                    //論理時間処理判定変数が偽になる。
-                    jikanShoriHantei = false;
-                    yokoPosi = 2;
+                //←フリックなら→移動
+                if (diff.x<0) {
+                    if (this.gameObject.transform.position.x <= 5.6) {
+                        //オブジェ移動
+                        this.gameObject.transform.position +=
+                            new Vector3(chousei * Time.deltaTime, 0, 0);
+                    } else {
+                        //オブジェ移動
+                        this.gameObject.transform.position =
+                            new Vector3((float)5.6, 0, 0);
+                        //論理時間処理判定変数が偽になる。
+                        jikanShoriHantei = false;
+                        yokoPosi = 2;
+                    }
                 }
             }
             else if (yokoPosi == 2) {
@@ -91,21 +95,21 @@ public class t0047_yokoSsMove : MonoBehaviour {
                     jikanShoriHantei = false;
                     yokoPosi = 3;
                 }
-            } 
-            //else if (yokoPosi == 3) {
-            //    if (this.gameObject.transform.position.x <= 11.2) {
-            //        //オブジェ移動
-            //        this.gameObject.transform.position +=
-            //            new Vector3(chousei * Time.deltaTime, 0, 0);
-            //    } else {
-            //        //オブジェ移動
-            //        this.gameObject.transform.position =
-            //            new Vector3((float)11.2, 0, 0);
-            //        //論理時間処理判定変数が偽になる。
-            //        jikanShoriHantei = false;
-            //        yokoPosi = 3;
-            //    }
-            //}
+            }
+            else if (yokoPosi == 3) {
+                if (this.gameObject.transform.position.x <= 11.2) {
+                    //オブジェ移動
+                    this.gameObject.transform.position +=
+                        new Vector3(chousei * Time.deltaTime, 0, 0);
+                } else {
+                    //オブジェ移動
+                    this.gameObject.transform.position =
+                        new Vector3((float)11.2, 0, 0);
+                    //論理時間処理判定変数が偽になる。
+                    jikanShoriHantei = false;
+                    yokoPosi = 3;
+                }
+            }
         }
     }
     //判定SorSS Sなら1、SSなら2を返す。
