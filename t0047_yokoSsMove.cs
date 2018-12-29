@@ -9,6 +9,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
     //横SSのみSS移動。普通のスワイプの動きはしない。実験
     //横SSが1秒の動きをするよう調整　→移動
     //横SSが途中で止まるように調整
+    //→だけじゃなく←移動もできるようにする
 
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
@@ -35,6 +36,9 @@ public class t0047_yokoSsMove : MonoBehaviour {
     //今回の下移動速度を調整するためだけの変数
     public float chousei = 10;
 
+    //横移動の時の目次、フラグ、SSを位置を定める
+    int yokoPosi = 1;
+
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
@@ -60,17 +64,21 @@ public class t0047_yokoSsMove : MonoBehaviour {
         }
         //論理時間処理判定関数が真ならば
         if (jikanShoriHantei) {
-            if (this.gameObject.transform.position.x <= 5.6) {
-                //オブジェ移動
-                this.gameObject.transform.position +=
-                    new Vector3(chousei * Time.deltaTime, 0, 0);
-            } else {
-                //オブジェ移動
-                this.gameObject.transform.position =
-                    new Vector3((float)5.6, 0, 0);
-                //論理時間処理判定変数が偽になる。
-                jikanShoriHantei = false;
+            if (yokoPosi == 1) {
+                if (this.gameObject.transform.position.x <= 5.6) {
+                    //オブジェ移動
+                    this.gameObject.transform.position +=
+                        new Vector3(chousei * Time.deltaTime, 0, 0);
+                } else {
+                    //オブジェ移動
+                    this.gameObject.transform.position =
+                        new Vector3((float)5.6, 0, 0);
+                    //論理時間処理判定変数が偽になる。
+                    jikanShoriHantei = false;
+                    yokoPosi = 2;
+                }
             }
+            
         }
     }
     //判定SorSS Sなら1、SSなら2を返す。
