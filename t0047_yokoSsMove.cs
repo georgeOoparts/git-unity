@@ -78,7 +78,20 @@ public class t0047_yokoSsMove : MonoBehaviour {
                     yokoPosi = 2;
                 }
             }
-            
+            else if (yokoPosi == 2) {
+                if (this.gameObject.transform.position.x <= 11.2) {
+                    //オブジェ移動
+                    this.gameObject.transform.position +=
+                        new Vector3(chousei * Time.deltaTime, 0, 0);
+                } else {
+                    //オブジェ移動
+                    this.gameObject.transform.position =
+                        new Vector3((float)11.2, 0, 0);
+                    //論理時間処理判定変数が偽になる。
+                    jikanShoriHantei = false;
+                    yokoPosi = 3;
+                }
+            }
         }
     }
     //判定SorSS Sなら1、SSなら2を返す。
