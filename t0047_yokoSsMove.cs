@@ -28,7 +28,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
     Vector3 diff = new Vector3(0, 0, 0);
 
     //一定時間の処理をするかどうかのブール変数
-    private bool jikanShoriHantei = false;
+    static bool yokojikanShoriHantei = false;
     //一定の処理時間を決める変数
     public float timeOut = 1;
     //時間をためる変数
@@ -58,14 +58,14 @@ public class t0047_yokoSsMove : MonoBehaviour {
                 //SSならば
                 if (hanteiSorScrollS() == 1) {
                     //論理時間処理判定変数が真になる。
-                    jikanShoriHantei = true;
+                    yokojikanShoriHantei = true;
                 }
             }
             //k6_ab:ストップウォッチの時間をリセット       
             stopwatch.Reset();
         }
         //論理時間処理判定関数が真ならば
-        if (jikanShoriHantei) {
+        if (yokojikanShoriHantei) {
             if (yokoPosi == 1) {
                 //←フリックなら→移動
                 if (diff.x < 0) {
@@ -78,7 +78,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position =
                             new Vector3((float)5.6, 0, 0);
                         //論理時間処理判定変数が偽になる。
-                        jikanShoriHantei = false;
+                        yokojikanShoriHantei = false;
                         yokoPosi = 2;
                     }
                 }
@@ -94,7 +94,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position =
                             new Vector3((float)11.2, 0, 0);
                         //論理時間処理判定変数が偽になる。
-                        jikanShoriHantei = false;
+                        yokojikanShoriHantei = false;
                         yokoPosi = 3;
                     }
                 }
@@ -109,7 +109,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position =
                             new Vector3((float)0, 0, 0);
                         //論理時間処理判定変数が偽になる。
-                        jikanShoriHantei = false;
+                        yokojikanShoriHantei = false;
                         yokoPosi = 1;
                     }
                 }
@@ -125,7 +125,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position =
                             new Vector3((float)5.6, 0, 0);
                         //論理時間処理判定変数が偽になる。
-                        jikanShoriHantei = false;
+                        yokojikanShoriHantei = false;
                         yokoPosi = 2;
                     }
                 }
