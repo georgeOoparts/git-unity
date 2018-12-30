@@ -28,7 +28,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
     Vector3 diff = new Vector3(0, 0, 0);
 
     //一定時間の処理をするかどうかのブール変数
-    static bool yokojikanShoriHantei = false;
+    public static bool yokojikanShoriHantei = false;
     //一定の処理時間を決める変数
     public float timeOut = 1;
     //時間をためる変数
@@ -39,6 +39,13 @@ public class t0047_yokoSsMove : MonoBehaviour {
 
     //横移動の時の目次、フラグ、SSを位置を定める
     int yokoPosi = 1;
+
+
+    //private void Start() {
+    //    GameObject camera = this.gameObject;
+    //    Vector3 camPos=camera.transform.position;
+    //    camera.transform.position = new Vector3(108,camPos.y,camPos.z);
+    //}
 
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
@@ -74,9 +81,10 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position +=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
+                        Vector3 pos1 = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)5.6, 0, 0);
+                            new Vector3((float)5.6, pos1.y,pos1.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 2;
@@ -90,9 +98,10 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position +=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
+                        Vector3 pos2 = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)11.2, 0, 0);
+                            new Vector3((float)11.2, pos2.y, pos2.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 3;
@@ -105,9 +114,10 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position -=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
+                        Vector3 pos2_2 = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)0, 0, 0);
+                            new Vector3((float)0, pos2_2.y, pos2_2.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 1;
@@ -121,9 +131,10 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position -=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
+                        Vector3 pos3 = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)5.6, 0, 0);
+                            new Vector3((float)5.6, pos3.y, pos3.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 2;

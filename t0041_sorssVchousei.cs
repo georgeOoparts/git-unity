@@ -45,8 +45,13 @@ public class t0041_sorssVchousei : MonoBehaviour {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
 
-        //マウスボタンを押したらならば
-        if (Input.GetMouseButtonDown(0)) {
+        if (t0047_yokoSsMove.yokojikanShoriHantei == true) {
+            //diff = new Vector3(0,0,0);
+            //firstPos = new Vector3(0, 0, 0);
+            jikanShoriHantei = false;
+        }
+            //マウスボタンを押したらならば
+            if (Input.GetMouseButtonDown(0)) {
             //k6_aa:ストップウォッチスタート
             stopwatch.Start();
             //最初にタップしたスクリーンポジションを入れる。
@@ -58,6 +63,7 @@ public class t0041_sorssVchousei : MonoBehaviour {
             diff = Input.mousePosition - firstPos;
             //SSならば
             if (hanteiSorScrollS() == 1) {
+                
                 //論理時間処理判定変数が真になる。
                 jikanShoriHantei = true;
             }
@@ -65,7 +71,9 @@ public class t0041_sorssVchousei : MonoBehaviour {
             stopwatch.Reset();
         }
         //論理時間処理判定関数が真ならば
-        if (jikanShoriHantei) {
+        if (jikanShoriHantei
+            && t0047_yokoSsMove.yokojikanShoriHantei == false
+            ) {
             //SS中にタップがあったらSSを止める
             if (Input.GetMouseButtonDown(0)) {
                 tamaruTime = timeOut;
