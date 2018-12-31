@@ -11,6 +11,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
     //横SSが途中で止まるように調整
     //→だけじゃなく←移動もできるようにする
     //とりあえず横移動完成
+    //横移動の使いまわし変数tukaimawasiPos追加
 
     //スワイプの距離を入れるために使う変数。
     Vector3 firstPos;
@@ -40,6 +41,8 @@ public class t0047_yokoSsMove : MonoBehaviour {
     //横移動の時の目次、フラグ、SSを位置を定める
     int yokoPosi = 1;
 
+    //横移動の使いまわし変数
+    Vector3 tukaimawasiPos = new Vector3(0,0,0);
 
     //private void Start() {
     //    GameObject camera = this.gameObject;
@@ -77,14 +80,17 @@ public class t0047_yokoSsMove : MonoBehaviour {
                 //←フリックなら→移動
                 if (diff.x < 0) {
                     if (this.gameObject.transform.position.x <= 5.6) {
+                        
                         //オブジェ移動
                         this.gameObject.transform.position +=
-                            new Vector3(chousei * Time.deltaTime, 0, 0);
+                            new Vector3(chousei * Time.deltaTime,0,0);
                     } else {
-                        Vector3 pos1 = this.gameObject.transform.position;
+                        //tukaimawasiPos.yとかやるために変数に一旦入れる
+                        tukaimawasiPos = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)5.6, pos1.y,pos1.z);
+                            new Vector3((float)5.6,
+                            tukaimawasiPos.y,tukaimawasiPos.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 2;
@@ -98,10 +104,12 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position +=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
-                        Vector3 pos2 = this.gameObject.transform.position;
+                        //tukaimawasiPos.yとかやるために変数に一旦入れる
+                        tukaimawasiPos = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)11.2, pos2.y, pos2.z);
+                            new Vector3((float)11.2,
+                            tukaimawasiPos.y, tukaimawasiPos.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 3;
@@ -114,10 +122,12 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position -=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
-                        Vector3 pos2_2 = this.gameObject.transform.position;
+                        //tukaimawasiPos.yとかやるために変数に一旦入れる
+                        tukaimawasiPos = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)0, pos2_2.y, pos2_2.z);
+                            new Vector3((float)0, 
+                            tukaimawasiPos.y, tukaimawasiPos.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 1;
@@ -131,10 +141,12 @@ public class t0047_yokoSsMove : MonoBehaviour {
                         this.gameObject.transform.position -=
                             new Vector3(chousei * Time.deltaTime, 0, 0);
                     } else {
-                        Vector3 pos3 = this.gameObject.transform.position;
+                        //tukaimawasiPos.yとかやるために変数に一旦入れる
+                        tukaimawasiPos = this.gameObject.transform.position;
                         //オブジェ移動
                         this.gameObject.transform.position =
-                            new Vector3((float)5.6, pos3.y, pos3.z);
+                            new Vector3((float)5.6, 
+                            tukaimawasiPos.y, tukaimawasiPos.z);
                         //論理時間処理判定変数が偽になる。
                         yokojikanShoriHantei = false;
                         yokoPosi = 2;
