@@ -44,6 +44,9 @@ public class t0047_yokoSsMove : MonoBehaviour {
     //横移動の使いまわし変数
     Vector3 tukaimawasiPos = new Vector3(0,0,0);
 
+    public float yokoHanteiHaba = 0.01f;
+
+
     //private void Start() {
     //    GameObject camera = this.gameObject;
     //    Vector3 camPos=camera.transform.position;
@@ -64,11 +67,13 @@ public class t0047_yokoSsMove : MonoBehaviour {
             //←→判定の判定のためだけに使うdiff
             diff = Input.mousePosition - firstPos;
 
-            if (tateYokoHantei() == 1) {
-                //SSならば
-                if (hanteiSorScrollS() == 1) {
-                    //論理時間処理判定変数が真になる。
-                    yokojikanShoriHantei = true;
+            if (yokoHanteiHaba >= diff.y) {
+                if (tateYokoHantei() == 1) {
+                    //SSならば
+                    if (hanteiSorScrollS() == 1) {
+                        //論理時間処理判定変数が真になる。
+                        yokojikanShoriHantei = true;
+                    }
                 }
             }
             //k6_ab:ストップウォッチの時間をリセット       

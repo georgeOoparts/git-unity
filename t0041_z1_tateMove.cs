@@ -41,6 +41,9 @@ public class t0041_z1_tateMove : MonoBehaviour {
     //マウスダウンの時とアップの時の差をdiffに入れる。
     Vector3 diff = new Vector3(0, 0, 0);
 
+    //Vector3 kyoutuPos;
+
+
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
@@ -95,8 +98,12 @@ public class t0041_z1_tateMove : MonoBehaviour {
                 tamaruTime = 0;
             }
         }
-        if (t0047_yokoSsMove.yokojikanShoriHantei == false)
-            flickControl();
+        //if (t0047_yokoSsMove.yokojikanShoriHantei == false)
+        //if (t0047_yokoSsMove.yokojikanShoriHantei == false)
+        //    kyoutuPos = this.gameObject.transform.position;
+        flickControl();
+        //if(t0047_yokoSsMove.yokojikanShoriHantei==true)
+        //    this.gameObject.transform
     }
     Vector3 objectPos;
     Vector3 FCfirstPos;
