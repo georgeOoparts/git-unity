@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;//UI使うときはこれなきゃ駄目
 
-//k1　デバックログの使い方
+
 public class k0001_debugLog : MonoBehaviour {
-    int hensu = 9999;
-	// Use this for initialization
-	void Start () {
-        Debug.Log("デバックログはこうやるぜee"+hensu);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
+/*k1　デバックログの使い方
+    k1_1 デバッグログ表示
+    Debug.Log("デバックログはこうやるぜee");
+    k1_2 デバッグログ　変数　表示----ー----------------
+    int hensu = 9999;
+    Debug.Log(hensu);
+    k1_3 デバッグログ　変数＋　表示----ー----------------
+    int hensu = 9999;
+    Debug.Log("wowow"+hensu);
+
+*/
