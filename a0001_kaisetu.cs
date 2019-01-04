@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class a0001_kaisetu : MonoBehaviour {
 
-
-    //AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
+//AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
     //オブジェにApplicationChrome.csをアタッチ。
     //同じオブジェにスクリプトをアタッチ。
     //スクリプトのスタートに下の文字列を書く。
