@@ -87,7 +87,7 @@ public class a0001_kaisetu : MonoBehaviour {
     k0003_2_3:左クリック押されてる間入力されたか出力０１Input.GetMouseButtonDown(0)
     具体例：：if (Input.GetMouseButton(0)){スライドするとか・・・}
     
-    //-------------------------------------------------------------
+//-------------------------------------------------------------
 
     k0004_1_1_a1:スクリーン座標＞ワールド座標
     ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
@@ -104,14 +104,27 @@ public class a0001_kaisetu : MonoBehaviour {
     position = Camera.main.ScreenToWorldPoint(position);
     
     Debug.Log(position);
-    //----------------------------------------------------------------------------
-    k4_a:どこかに書いてあるRectTransformの変数を作る
-    k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
-    k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
-    k4_aaa2:uiオブジェクトのスクリーン座標高さを得る
-    k4_aab:uiの幅、高さをスクリーン値で変形させる
-    k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
-    k4_aac2:uiをワールド値で移動
+//----------------------------------------------------------------------------
+    //k4_1_a1:どこかに書いてあるRectTransformの変数を作る
+    RectTransform rt;
+
+    //k4_1_a2:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
+    rt = this.gameObject.GetComponent<RectTransform>();
+
+    //k4_a3_1:uiオブジェクトのスクリーン座標幅を得る
+    rt.sizeDelta.x
+    //k4_a3_2:uiオブジェクトのスクリーン座標高さを得る
+    rt.sizeDelta.y
+
+    //k4_a3_3:uiの幅、高さをスクリーン値で変形させる
+    rt.sizeDelta = new Vector2(100,100);
+
+    //k4_a3_4:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
+    rt.anchoredPosition = new Vector2(190, -145);
+    //k4_a3_5:uiをワールド値で移動
+    rt.position = new Vector2(0,0);
+//----------------------------------------------------------------------------
+    
     k5_a_atStatic:静的変数を外のクラスから（クラス名）.(メソッド名)で呼び出す。
     k5_b_atStatic:静的メソッドを外のクラスから（クラス名）.(メソッド名)で呼び出す。
     k6_a:ストップウォッチ関数を使う時のおまじない。
