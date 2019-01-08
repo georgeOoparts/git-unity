@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;//UI使うときはこれなきゃ駄目
+
 //textオブジェにアタッチ。テキストの長さに合わせてテキスト幅を広げる
 public class k0004_atRectTransform: MonoBehaviour {
     

@@ -7,35 +7,40 @@ public class a0001_kaisetu : MonoBehaviour {
     
 }
 /*
-    AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
-    オブジェにApplicationChrome.csをアタッチ。
-    同じオブジェにスクリプトをアタッチ。
-    スクリプトのスタートに下の文字列を書く。
+    命名規則
+    k0001_1_hoge>k0001_2_hoge
+    前の記述を前提にしている物
+    k0001_1_1>k0002_1_1_2
+    //-----------------------------------------------------------
+    //AC_a1:アンドロイド端末でステータスバーとナビゲーションバーを常に表示 
+    //オブジェにApplicationChrome.csをアタッチ。
+    //同じオブジェにスクリプトをアタッチ。
+    //スクリプトのスタートに下の文字列を書く。
     ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
 
-    AC_a2:ステータスバーだけを表示
+    //AC_a2:ステータスバーだけを表示
     ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
     ApplicationChrome.navigationBarState=ApplicationChrome.State.Hidden;
 
-    AC_a3:ナビゲーションバーだけを表示
+    //AC_a3:ナビゲーションバーだけを表示
     ApplicationChrome.navigationBarState=ApplicationChrome.State.Visible;
 
-    AC_b1:ステータスバー、ナビゲーションバーの状態を変える
-    通常　ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
-    画面に映る物の上にかぶせる
+    //AC_b1:ステータスバー、ナビゲーションバーの状態を変える
+    //通常　ApplicationChrome.statusBarState=ApplicationChrome.State.Visible;
+    //画面に映る物の上にかぶせる
     ApplicationChrome.statusBarState=
                 ApplicationChrome.State.VisiblOverContent;
-    透明になりながら画面に映るもののうえにかぶさる
+    //透明になりながら画面に映るもののうえにかぶさる
     ApplicationChrome.statusBarState=
                 ApplicationChrome.State.TranslucentOverContent;
-    隠す
+    //隠す
     ApplicationChrome.statusBarState=ApplicationChrome.State.Hidden;
     ------------------------------------------------------------------------------
 
-    g1 最新のコミットメッセージを変更
-    g1 ６下ファイルステータス＞８オブションのコミット＞最後のコミットを上書き
-    g2 無駄に進んだ（枝別れでも良し）したブランチを戻す
-    g2 無駄に進んだブランチを選択＞無駄に進んだブランチを右クリっク
+    //g1 最新のコミットメッセージを変更
+    //g1 ６下ファイルステータス＞８オブションのコミット＞最後のコミットを上書き
+    //g2 無駄に進んだ（枝別れでも良し）したブランチを戻す
+    //g2 無駄に進んだブランチを選択＞無駄に進んだブランチを右クリっク
     　＞このコミットを打ち消す＞枝分かれの根元を右クリック
      ＞このコミットまでリセット＞hard
     ------------------------------------------------------------------------------
