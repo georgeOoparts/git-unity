@@ -67,73 +67,92 @@ public class a0001_kaisetu : MonoBehaviour {
      k2_1_a4:スクリーン座標のテキスト幅 text.preferredWidth
      k2_1_a5:スクリーン座標のテキスト高さ text.preferredHeight
     -------------------------------------------------------------
-    mouseposition回り
-    k0003_1_a1:Input.mousePosition.ToString() でマウスのスクリーンポイントを
+    k0003:mouseposition回り
+    
+    k0003_1_1:Input.mousePositionでマウスのスクリーンポイントを
+    V3形式で代入
+    V3 position=Input.mousePosition;
+
+    k0003_1_2:Input.mousePosition.ToString()でマウスのスクリーンポイントを
     string形式で代入
-    //具体例：：Debug.Log(Input.mousePosition.ToString());
-
-    k0003_1_b1:一瞬左クリックダウン入力されたか出力０１
-    Input.GetMouseButtonDown(0)
+    string position=Input.mousePosition.ToString();
+    具体例：：Debug.Log(Input.mousePosition.ToString());
+    ---------------------------------------------------------------------------------------
+    k0003_2_1:一瞬左クリックダウン入力されたか出力０１Input.GetMouseButtonDown(0)
     具体例：：if (Input.GetMouseButtonDown(0)){・・・}
 
-    k9_1_b2:一瞬左クリックアップ入力されたか出力０１Input.GetMouseButtonUp(0)
+    k0003_2_2:一瞬左クリックアップ入力されたか出力０１Input.GetMouseButtonUp(0)
     具体例：：if (Input.GetMouseButtonDown(0)){・・・}
 
-    k9_1_b3:左クリック押されてる間入力されたか出力０１
-    Input.GetMouseButtonDown(0)
+    k0003_2_3:左クリック押されてる間入力されたか出力０１Input.GetMouseButtonDown(0)
     具体例：：if (Input.GetMouseButton(0)){スライドするとか・・・}
     
     //-------------------------------------------------------------
 
-    //k3_zz2_a:スクリーン座標＞ワールド座標
-    //k4_a:どこかに書いてあるRectTransformの変数を作る
-    //k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
-    //k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
-    //k4_aaa2:uiオブジェクトのスクリーン座標高さを得る
-    //k4_aab:uiの幅、高さをスクリーン値で変形させる
-    //k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
-    //k4_aac2:uiをワールド値で移動
-    //k5_a_atStatic:静的変数を外のクラスから（クラス名）.(メソッド名)で呼び出す。
-    //k5_b_atStatic:静的メソッドを外のクラスから（クラス名）.(メソッド名)で呼び出す。
-    //k6_a:ストップウォッチ関数を使う時のおまじない。
-    //k6_aa:ストップウォッチスタート
-    //k6_ab:ストップウォッチの時間をリセット
-    //k6_ac:何秒たったかを変数elapseに入れる
-    //k7_a:オブジェを存在するけど見えなくする。
-    //k7_b:オブジェを見えるようにするよ。
-    //k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
-    //k8_b:応用。親になっているＯＢＪを得る。
-    //k8_b:oyaPanel = this.gameObject.transform.parent.gameObject;
+    k0004_1_1_a1:スクリーン座標＞ワールド座標
+    ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
+
+    position = Camera.main.ScreenToWorldPoint(position);
     
-    //k10_kataHenkan
-    //k10:float>int に小数点以下切り上げで変換。
-    //k10:int kazu=(int)fKazu
-    //k0011:textのぼやけを直す
-    //k0011:ヒエラルキー＞scaleを小さくして＞サイズ調整
-    //k0012:3dtextをuitextの後ろに表示しようとする。
-    //k0012:uitextをカメラに固定カメラのｚポジション０
-    //＞3dtextのｚポジション９０にするとなぜかuitextの後ろに3dtext表示される
-    //k0013:３ｄオブジェtransfome回り
-    //k0013_a1: 宣言 Transform page;
-    //k0013_b1;オブジェに当てはめる；
-    //>page = this.gameObject.GetComponent<Transform>();
-    //k0013_c1 オブジェ移動；
-    //>transform.position = new Vector3((float)-2.8, -5, 0);
-    //k0014_00 :プレハブを使う objにはりつけ
-    //public GameObject page;
-    //k0014_a :プレハブを使う
-    //Instantiate(page);
-    //k0014_b1 :プレハブを使う 角度　位置
-    //配置する回転角を設定
-    //Quaternion q = new Quaternion();
-    //q = Quaternion.identity;
-    //      transform.position = new Vector3(0, 5 - 10 * (i - 1), 0);
-    //      Vector3 placePosition
-    //            = new Vector3((float)-2.8, 5 - 10 * (i - 1), 0);
-    //       GameObject obj =Instantiate(page, placePosition, q);
-    //k0014_b2 :プレハブを使う さらに内容変更
-    //GameObject obj = Instantiate(page, placePosition, q);
-    //obj.GetComponent<TextMesh>().text =i.ToString();
+    具体例＞
+    //k0003_1_1:Input.mousePositionでマウスのスクリーンポイントを
+    //V3形式で代入
+    V3 position=Input.mousePosition;
+    
+    //k0004_1_1_a1:スクリーン座標＞ワールド座標
+    //ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
+    position = Camera.main.ScreenToWorldPoint(position);
+    
+    Debug.Log(position);
+    //----------------------------------------------------------------------------
+    k4_a:どこかに書いてあるRectTransformの変数を作る
+    k4_aa:このオブジェクトにＵＩ専門であるRectTransformをアタッチ
+    k4_aaa1:uiオブジェクトのスクリーン座標幅を得る
+    k4_aaa2:uiオブジェクトのスクリーン座標高さを得る
+    k4_aab:uiの幅、高さをスクリーン値で変形させる
+    k4_aac1:uiをスクリーン値で移動（左上にアンカーセット、下方向は-の値)
+    k4_aac2:uiをワールド値で移動
+    k5_a_atStatic:静的変数を外のクラスから（クラス名）.(メソッド名)で呼び出す。
+    k5_b_atStatic:静的メソッドを外のクラスから（クラス名）.(メソッド名)で呼び出す。
+    k6_a:ストップウォッチ関数を使う時のおまじない。
+    k6_aa:ストップウォッチスタート
+    k6_ab:ストップウォッチの時間をリセット
+    k6_ac:何秒たったかを変数elapseに入れる
+    k7_a:オブジェを存在するけど見えなくする。
+    k7_b:オブジェを見えるようにするよ。
+    k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
+    k8_b:応用。親になっているＯＢＪを得る。
+    k8_b:oyaPanel = this.gameObject.transform.parent.gameObject;
+    
+    k10_kataHenkan
+    k10:float>int に小数点以下切り上げで変換。
+    k10:int kazu=(int)fKazu
+    k0011:textのぼやけを直す
+    k0011:ヒエラルキー＞scaleを小さくして＞サイズ調整
+    k0012:3dtextをuitextの後ろに表示しようとする。
+    k0012:uitextをカメラに固定カメラのｚポジション０
+    ＞3dtextのｚポジション９０にするとなぜかuitextの後ろに3dtext表示される
+    k0013:３ｄオブジェtransfome回り
+    k0013_a1: 宣言 Transform page;
+    k0013_b1;オブジェに当てはめる；
+    >page = this.gameObject.GetComponent<Transform>();
+    k0013_c1 オブジェ移動；
+    >transform.position = new Vector3((float)-2.8, -5, 0);
+    k0014_00 :プレハブを使う objにはりつけ
+    public GameObject page;
+    k0014_a :プレハブを使う
+    Instantiate(page);
+    k0014_b1 :プレハブを使う 角度　位置
+    配置する回転角を設定
+    Quaternion q = new Quaternion();
+    q = Quaternion.identity;
+          transform.position = new Vector3(0, 5 - 10 * (i - 1), 0);
+          Vector3 placePosition
+                = new Vector3((float)-2.8, 5 - 10 * (i - 1), 0);
+           GameObject obj =Instantiate(page, placePosition, q);
+    k0014_b2 :プレハブを使う さらに内容変更
+    GameObject obj = Instantiate(page, placePosition, q);
+    obj.GetComponent<TextMesh>().text =i.ToString();
      
      
      
