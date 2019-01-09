@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 public class t0003_LT_ScreenPositionSlide : MonoBehaviour {
     //k4_a:どこかに書いてあるRectTransformの変数を作る
     RectTransform rt;

@@ -129,22 +129,6 @@ public class a0001_kaisetu : MonoBehaviour {
     
 //-------------------------------------------------------------
 
-    //k0004_1_1_a1:スクリーン座標＞ワールド座標
-    //ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
-
-    position = Camera.main.ScreenToWorldPoint(position);
-    
-    具体例＞
-    //k0003_1_1:Input.mousePositionでマウスのスクリーンポイントを
-    //V3形式で代入
-    V3 position=Input.mousePosition;
-    
-    //k0004_1_1_a1:スクリーン座標＞ワールド座標
-    //ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
-    position = Camera.main.ScreenToWorldPoint(position);
-    
-    Debug.Log(position);
-//----------------------------------------------------------------------------
     //k4_1:どこかに書いてあるRectTransformの変数を作る
     RectTransform rt;
 
