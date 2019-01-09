@@ -127,8 +127,8 @@ public class a0001_kaisetu : MonoBehaviour {
     
 //-------------------------------------------------------------
 
-    k0004_1_1_a1:スクリーン座標＞ワールド座標
-    ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
+    //k0004_1_1_a1:スクリーン座標＞ワールド座標
+    //ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
 
     position = Camera.main.ScreenToWorldPoint(position);
     
@@ -172,7 +172,6 @@ public class a0001_kaisetu : MonoBehaviour {
         return (A * B);
     }
 //-------------------------------------------------------------------------------------
-   
     //k6_stopwatch:
     
     //k6_1:ストップウォッチ関数を使う時のおまじない。
@@ -194,8 +193,17 @@ public class a0001_kaisetu : MonoBehaviour {
     
     具体例＞＞Debug.Log(elapse);//何秒たったかを表示させたいときはこれを使う
 ----------------------------------------------------------------------------------
-    k7_a:オブジェを存在するけど見えなくする。
-    k7_b:オブジェを見えるようにするよ。
+    //k7オブジェクトを見えたり見えなくしたりする
+
+    //k7_1:Imageコンポーネントを使う
+    using UnityEngine.UI;
+
+    //k7_1_1:オブジェを存在するけど見えなくする。
+    this.gameObject.GetComponent<Image>().enabled = false;
+
+    //k7_1_2:オブジェを見えるようにするよ。
+    this.gameObject.GetComponent<Image>().enabled = true;
+----------------------------------------------------------------------------------
     k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
     k8_b:応用。親になっているＯＢＪを得る。
     k8_b:oyaPanel = this.gameObject.transform.parent.gameObject;

@@ -12,3 +12,16 @@ public class k0007_toumeiObj : MonoBehaviour {
         this.gameObject.GetComponent<Image>().enabled = true;
     }
 }
+/*
+    //k7オブジェクトを見えたり見えなくしたりする
+
+    //k7_1:Imageコンポーネントを使う
+    using UnityEngine.UI;
+
+    //k7_1_1:オブジェを存在するけど見えなくする。
+    this.gameObject.GetComponent<Image>().enabled = false;
+
+    //k7_1_2:オブジェを見えるようにするよ。
+    this.gameObject.GetComponent<Image>().enabled = true;
+     
+  */
