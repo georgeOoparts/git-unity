@@ -85,25 +85,34 @@ public class a0001_kaisetu : MonoBehaviour {
     
     k2_1_1_3:スクリーン座標のテキスト高さ text.preferredHeight
     ---------------------------------------------------------------------------------------
-    k0003:mouseposition回り
-    
-    k0003_1_1:Input.mousePositionでマウスのスクリーンポイントを
-    V3形式で代入
-    V3 position=Input.mousePosition;
+    mouseposition回り
+   
+    //k0003_1:Input.mousePositionでマウスのスクリーンポイントを
+    //V3形式で代入
+    ////?
+    Vector3 position=Input.mousePosition;
 
-    k0003_1_2:Input.mousePosition.ToString()でマウスのスクリーンポイントを
-    string形式で代入
+    //k0003_2:Input.mousePosition.ToString()でマウスのスクリーンポイントを
+    //string形式で代入
+    ////?
     string position=Input.mousePosition.ToString();
-    具体例：：Debug.Log(Input.mousePosition.ToString());
+    
+    >>具体例：：Debug.Log(Input.mousePosition.ToString());
     ---------------------------------------------------------------------------------------
-    k0003_2_1:一瞬左クリックダウン入力されたか出力０１Input.GetMouseButtonDown(0)
-    具体例：：if (Input.GetMouseButtonDown(0)){・・・}
+    //k0003_3:一瞬左クリックダウン入力されたか出力０１
+    Input.GetMouseButtonDown(0)
+    
+    >>具体例：：if (Input.GetMouseButtonDown(0)){・・・}
 
-    k0003_2_2:一瞬左クリックアップ入力されたか出力０１Input.GetMouseButtonUp(0)
-    具体例：：if (Input.GetMouseButtonDown(0)){・・・}
+    //k0003_4:一瞬左クリックアップ入力されたか出力０１
+    Input.GetMouseButtonUp(0)
+    
+    >>具体例：：if (Input.GetMouseButtonDown(0)){・・・}
 
-    k0003_2_3:左クリック押されてる間入力されたか出力０１Input.GetMouseButtonDown(0)
-    具体例：：if (Input.GetMouseButton(0)){スライドするとか・・・}
+    //k0003_5:左クリック押されてる間入力されたか出力０１
+    Input.GetMouseButtonDown(0)
+    
+    >>具体例：：if (Input.GetMouseButton(0)){スライドするとか・・・}
     
 //-------------------------------------------------------------
 
