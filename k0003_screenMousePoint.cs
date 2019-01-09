@@ -34,5 +34,18 @@ public class k0003_screenMousePoint : MonoBehaviour {
     Input.GetMouseButtonDown(0)
     
     >>具体例：：if (Input.GetMouseButton(0)){スライドするとか・・・}
+    --------------------------------------------------------------------------------------
+    ////k0003_1:Input.mousePositionでマウスのスクリーンポイントを
+    ////V3形式で代入
+    ////?
+    Vector3 position=Input.mousePosition;
+    
+    //k0003_6:スクリーン座標＞ワールド座標
+    position = Camera.main.ScreenToWorldPoint(position);
+    
+    >>具体例：：ワールドに変換されたposition.zはＵＩに貼り付けたカメラの位置となる。
+    >>具体例：：Debug.Log(position);
+    
+    ---------------------------------------------------------------------------------------
 
 */
