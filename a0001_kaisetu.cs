@@ -204,13 +204,25 @@ public class a0001_kaisetu : MonoBehaviour {
     //k7_1_2:オブジェを見えるようにするよ。
     this.gameObject.GetComponent<Image>().enabled = true;
 ----------------------------------------------------------------------------------
-    k8_a:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
-    k8_b:応用。親になっているＯＢＪを得る。
-    k8_b:oyaPanel = this.gameObject.transform.parent.gameObject;
+    k8：：親、子供　オブジェ呼び出し
+
+    //k8_1:子(孫、ひ孫　無限にＯＫ)になっているＯＢＪを得る。
+    //自分の直下の子供を得る。
+    kodomoObj1 = this.gameObject.transform.GetChild(0).gameObject;
     
-    k10_kataHenkan
-    k10:float>int に小数点以下切り上げで変換。
-    k10:int kazu=(int)fKazu
+    具体例：：応用。自分の孫になっているＯＢＪを得る。
+    kodomoObj2 = this.gameObject.transform.GetChild(1).gameObject;
+
+    //k8_2:応用。親になっているＯＢＪを得る。
+    oyaPanel = this.gameObject.transform.parent.gameObject;
+------------------------------------------------------------------------------
+    //k10 float>int変換 
+    ////?
+    float fKazu=10.0f;
+    
+    //k10_1:float>int に小数点以下切り上げで変換。
+    int kazu=(int)fKazu
+     ---------------------------------------------------------------------
     k0011:textのぼやけを直す
     k0011:ヒエラルキー＞scaleを小さくして＞サイズ調整
     k0012:3dtextをuitextの後ろに表示しようとする。
