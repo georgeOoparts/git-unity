@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//単純にスワイプでメインカメラ（アタッチしたオブジェ）を動かす。プログラム
 public class t0030_simSwipe : MonoBehaviour {
-
+    //単純にスワイプでメインカメラ（アタッチしたオブジェ）を動かす。プログラム
+    //上下スワイプ　上フリック下移動：下フリック上移動
     void Update() {
         flickControl();
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class t0015_bar : MonoBehaviour {
+public class u0011_1_rulerMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
