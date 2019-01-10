@@ -26,7 +26,7 @@ public class t0041_z1_tateMove : MonoBehaviour {
     Vector3 firstPos = new Vector3(0, 0, 0);
     //upDownHantei
     //上下判定で使う変数
-    int upDown = 0;
+    //int upDown = 0;
 
     //一定時間の処理をするかどうかのブール変数
     private bool jikanShoriHantei = false;
@@ -47,7 +47,6 @@ public class t0041_z1_tateMove : MonoBehaviour {
     void Update() {
         //k6_ac:何秒たったかを変数elapseに入れる
         elapse = (float)stopwatch.Elapsed.TotalSeconds;
-
 
         //マウスボタンを押したらならば
         if (Input.GetMouseButtonDown(0)) {
