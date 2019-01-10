@@ -46,6 +46,8 @@ public class t0047_yokoSsMove : MonoBehaviour {
 
     public float yokoHanteiHaba = 0.01f;
 
+    
+
 
     //private void Start() {
     //    GameObject camera = this.gameObject;
@@ -67,7 +69,7 @@ public class t0047_yokoSsMove : MonoBehaviour {
             //←→判定の判定のためだけに使うdiff
             diff = Input.mousePosition - firstPos;
 
-            if (yokoHanteiHaba >= diff.y) {
+            if (yokoHanteiHaba >= diff.y && diff.y>=-yokoHanteiHaba) {
                 if (tateYokoHantei() == 1) {
                     //SSならば
                     if (hanteiSorScrollS() == 1) {
